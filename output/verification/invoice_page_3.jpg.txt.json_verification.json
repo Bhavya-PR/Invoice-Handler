@@ -1,0 +1,27 @@
+{
+    "invoice_number": null,
+    "invoice_date": "laowe Date Nov 9. 2016 London W11 1LA",
+    "checks": {
+        "invoice_number": false,
+        "invoice_date": true,
+        "supplier_gst_number": false,
+        "bill_to_gst_number": false,
+        "po_number": true,
+        "Boulevard Bank Account 8900": false,
+        "subtotal_valid": false,
+        "final_total_valid": false
+    },
+    "confidence_scores": {
+        "invoice_number": 0.96,
+        "invoice_date": 0.92,
+        "supplier_gst_number": 0.75,
+        "bill_to_gst_number": 0.92,
+        "po_number": 0.77,
+        "Boulevard Bank Account 8900": 0.86
+    },
+    "warnings": [
+        "Calculation mismatch in item: Boulevard Bank Account 8900",
+        "Subtotal calculation mismatch.",
+        "Final total calculation mismatch."
+    ]
+}
