@@ -1,0 +1,18 @@
+{
+    "invoice_number": null,
+    "invoice_date": "Issue Date Nov 9, 2016 London W11 1LA",
+    "supplier_gst_number": null,
+    "bill_to_gst_number": null,
+    "po_number": "FR90103402210 PO number 581660",
+    "shipping_address": null,
+    "seal_and_sign_present": false,
+    "items": [
+        {
+            "serial_number": "202205019",
+            "description": "Client Payment\n\nCaf\u00e9 Le Bastille Payment Method Bank Transfer\n\n42 Boulevard Bank Account 8900",
+            "quantity": "0000",
+            "unit_price": "0175",
+            "total_amount": "7814"
+        }
+    ]
+}
