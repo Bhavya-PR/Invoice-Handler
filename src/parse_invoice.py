@@ -9,11 +9,12 @@ output_json_folder = r"C:\Users\HP\OneDrive\Desktop\FRONT END COURSE\Portfolio\P
 # Ensure output directory exists
 os.makedirs(output_json_folder, exist_ok=True)
 
-def extract_field(text, field_name):
-    """Search for specific invoice fields in the extracted text."""
-    for line in text.split("\n"):
-        if field_name.lower() in line.lower():
-            return line.split(":")[-1].strip()
+def extract_field(text, field_names):
+    """Search multiple possible field names to extract data."""
+    for field in field_names:
+        for line in text.split("\n"):
+            if field.lower() in line.lower():
+                return line.split(":")[-1].strip()
     return None
 
 def parse_invoice(text_file):
@@ -21,18 +22,19 @@ def parse_invoice(text_file):
     with open(text_file, "r", encoding="utf-8") as f:
         raw_text = f.read()
 
+    # Structured invoice parsing
     parsed_data = {
-        "invoice_number": extract_field(raw_text, "Invoice No"),
-        "invoice_date": extract_field(raw_text, "Date"),
-        "supplier_gst_number": extract_field(raw_text, "Supplier GST"),
-        "bill_to_gst_number": extract_field(raw_text, "Bill To GST"),
-        "po_number": extract_field(raw_text, "PO Number"),
-        "shipping_address": extract_field(raw_text, "Shipping Address"),
-        "seal_and_sign_present": "Seal/Signature Detected" in raw_text,  # Check if text mentions seal/signature
+        "invoice_number": extract_field(raw_text, ["Invoice No", "Bill No", "Invoice ID"]),
+        "invoice_date": extract_field(raw_text, ["Date", "Invoice Date", "Billing Date"]),
+        "supplier_gst_number": extract_field(raw_text, ["Supplier GST", "GSTIN"]),
+        "bill_to_gst_number": extract_field(raw_text, ["Bill To GST", "Client GST"]),
+        "po_number": extract_field(raw_text, ["PO Number", "Purchase Order"]),
+        "shipping_address": extract_field(raw_text, ["Shipping Address", "Delivery Address"]),
+        "seal_and_sign_present": "Seal/Signature Detected" in raw_text,
         "items": []  # Will store line items dynamically
     }
 
-    # Extract line items (rows)
+    # Extract line items dynamically (quantity, unit price, total)
     line_item_pattern = re.compile(r"(\d+)\s+([\w\s]+)\s+(\d+)\s+([\d\.]+)\s+([\d\.]+)")
     for match in line_item_pattern.findall(raw_text):
         item = {
