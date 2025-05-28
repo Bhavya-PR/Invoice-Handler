@@ -1,10 +1,18 @@
 {
-    "invoice_number": "IATIEN1819013538",
-    "invoice_date": "Invoice Date 15/02/2019",
-    "supplier_gst_number": null,
+    "invoice_number": null,
+    "invoice_date": "Job Card Date 1502/2019",
+    "supplier_gst_number": "Customer GSTIN 2QAAFCA0924K1ZN",
     "bill_to_gst_number": null,
     "po_number": null,
     "shipping_address": null,
     "seal_and_sign_present": false,
-    "items": []
+    "items": [
+        {
+            "serial_number": "577",
+            "description": "201 Fh",
+            "quantity": "08187",
+            "unit_price": ".",
+            "total_amount": "298030"
+        }
+    ]
 }

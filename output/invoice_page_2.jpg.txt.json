@@ -1,6 +1,6 @@
 {
     "invoice_number": null,
-    "invoice_date": "City, State, Country Date Of Issue",
+    "invoice_date": null,
     "supplier_gst_number": null,
     "bill_to_gst_number": null,
     "po_number": null,
