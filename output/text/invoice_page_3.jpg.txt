@@ -1,0 +1,58 @@
+INVOICE “"
+
+Acme Shop
+ID 2016-10014
+
+185 Portbello Rd
+Issue Date Nov 9, 2016 London W11 1LA
+Delivery Date Nov 9, 2016 United Kingdom
+
+Das Nate Nov 25, 4015 VAT Number: GB202205019
+
+Client Payment
+
+Café Le Bastille Payment Method Bank Transfer
+
+42 Boulevard Bank Account 8900 0000 0175 7814
+
+Saint-Germain Order Number 12345
+
+75006 Paris
+
+France Payment Details Lorem ipsum
+
+Payment Terms Net 15
+
+VAT Number: FR90103402210 PO number 581660
+ITEM DESCRIPTION QUANTITY UNIT TAX TOTAL
+@ Best of First Nibs 67% Cacao 7 $9.95 20% $69.65
+
+e Pink Sea Salt 71% Cacao 3 $7.95 20% $23.85
+
+@ coconut Milk
+
+(3) Smoked Chai
+
+TOTAL $192.90 USD
+
+VAT 20% $38.58 USD
+
+TOTAL INCL. VAT ] s2s.ae.us |
+
+Agnimi, tes et et exces sitatibus qui comnit, ut essum
+nobis millandi nis enihill atenimi nciumquatas ne
+consendus re nullent ea di officium ut invellaut
+quam solectaturem et quibus ea duciur
+
+Notes
+
+Lorem Ipsum
+
+Thank you!
+
+Agnimi, tes et et exces sitatibus qui comnit.v ut es-
+sum nobis millandi nis enihill atenimi nciumquatas. View this invoice online at
+http://www loremipsurn. COM/XxxxxxxXxxx
+
+email@company.com +1 (89) 636-48018 Created in Sufio
+twitter @acme facebook @acme Instagram @acme

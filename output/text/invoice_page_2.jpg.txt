@@ -1,0 +1,24 @@
+647-444-1234 1 Your Address
+N VO C Ee your@email.com City, State, Country
+
+yourwebsite.com ZIP CODE
+
+Billed To Invoice Number Invoice Total
+{Cletus 4520.00
+City, State, Country Date Of Issue
+ZIP CODE 10/07/14
+Description Unit Cost Qty / Hr Rate Amount
+Your item Name $1000 4 1000
+Item description goes here
+Your item Name $1000 1 1000
+Item description goes here
+Your item Name $1000 1 1000
+Item description goes here
+Your item Name $1000 1 1000
+Item description goes here
+Subtotal $4000.00
+Tax $520.00
+Total $4520.00
+Invoice Terms
+
+Ex. Please pay your invoice by... Amount Due (USD) $4520.00
