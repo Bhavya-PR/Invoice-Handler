@@ -12,12 +12,12 @@
         "final_total_valid": false
     },
     "confidence_scores": {
-        "invoice_number": 0.96,
-        "invoice_date": 0.92,
-        "supplier_gst_number": 0.75,
-        "bill_to_gst_number": 0.92,
-        "po_number": 0.77,
-        "Boulevard Bank Account 8900": 0.86
+        "invoice_number": 0.73,
+        "invoice_date": 0.78,
+        "supplier_gst_number": 0.94,
+        "bill_to_gst_number": 0.97,
+        "po_number": 0.83,
+        "Boulevard Bank Account 8900": 0.88
     },
     "warnings": [
         "Calculation mismatch in item: Boulevard Bank Account 8900",

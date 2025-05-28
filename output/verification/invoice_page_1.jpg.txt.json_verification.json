@@ -11,11 +11,11 @@
         "final_total_valid": false
     },
     "confidence_scores": {
-        "invoice_number": 0.96,
-        "invoice_date": 0.72,
+        "invoice_number": 0.71,
+        "invoice_date": 0.89,
         "supplier_gst_number": 0.93,
-        "bill_to_gst_number": 0.97,
-        "po_number": 0.79
+        "bill_to_gst_number": 0.7,
+        "po_number": 0.95
     },
     "warnings": [
         "\u26a0\ufe0f Invalid numeric data detected in item: 201 Fh",
