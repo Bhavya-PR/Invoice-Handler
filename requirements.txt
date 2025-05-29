@@ -5,3 +5,6 @@ pandas
 openpyxl
 Pillow
 numpy
+openai>=1.0.0
+langchain
+langchain-groq

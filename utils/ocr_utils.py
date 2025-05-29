@@ -2,6 +2,9 @@ import pytesseract
 from pytesseract import Output
 import cv2
 
+# ✅ Make sure this path matches your actual Tesseract installation
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+
 def extract_text(image):
     """
     Extract raw text from a preprocessed image using Tesseract.
