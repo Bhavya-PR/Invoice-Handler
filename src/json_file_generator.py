@@ -9,12 +9,12 @@ output_json_folder = r"C:\Users\HP\OneDrive\Desktop\FRONT END COURSE\Portfolio\P
 # Ensure output directory exists
 os.makedirs(output_json_folder, exist_ok=True)
 
-def extract_field(text, field_names):
-    """Search multiple possible field names to extract data."""
-    for field in field_names:
-        for line in text.split("\n"):
-            if field.lower() in line.lower():
-                return line.split(":")[-1].strip()
+def extract_field(text, patterns):
+    """Extract fields using multiple regex patterns."""
+    for pattern in patterns:
+        match = re.search(pattern, text, re.IGNORECASE)
+        if match:
+            return match.group(1).strip()
     return None
 
 def parse_invoice(text_file):
@@ -22,14 +22,14 @@ def parse_invoice(text_file):
     with open(text_file, "r", encoding="utf-8") as f:
         raw_text = f.read()
 
-    # Structured invoice parsing
+    # Structured invoice parsing using regex-based extraction
     parsed_data = {
-        "invoice_number": extract_field(raw_text, ["Invoice No", "Bill No", "Invoice ID"]),
-        "invoice_date": extract_field(raw_text, ["Date", "Invoice Date", "Billing Date"]),
-        "supplier_gst_number": extract_field(raw_text, ["Supplier GST", "GSTIN"]),
-        "bill_to_gst_number": extract_field(raw_text, ["Bill To GST", "Client GST"]),
-        "po_number": extract_field(raw_text, ["PO Number", "Purchase Order"]),
-        "shipping_address": extract_field(raw_text, ["Shipping Address", "Delivery Address"]),
+        "invoice_number": extract_field(raw_text, [r"Invoice\s*No\.*\s*(\d+)", r"Bill\s*No\.*\s*(\d+)"]),
+        "invoice_date": extract_field(raw_text, [r"Date\.*\s*([\d\-\/]+)", r"Invoice Date\.*\s*([\d\-\/]+)"]),
+        "supplier_gst_number": extract_field(raw_text, [r"Supplier GST\.*\s*([\w\d]+)", r"GSTIN\s*([\w\d]+)"]),
+        "bill_to_gst_number": extract_field(raw_text, [r"Bill To GST\.*\s*([\w\d]+)", r"Client GST\.*\s*([\w\d]+)"]),
+        "po_number": extract_field(raw_text, [r"PO Number\.*\s*([\w\d]+)", r"Purchase Order\.*\s*([\w\d]+)"]),
+        "shipping_address": extract_field(raw_text, [r"Shipping Address\.*\s*(.*)", r"Delivery Address\.*\s*(.*)"]),
         "seal_and_sign_present": "Seal/Signature Detected" in raw_text,
         "items": []  # Will store line items dynamically
     }
