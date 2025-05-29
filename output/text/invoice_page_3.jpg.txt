@@ -1,39 +1,10 @@
-ACME INVOICE = — |
-‘a 4 me Ip 301610014. ‘Acme Shop:
-fee 23 ID 2016-10014 - ‘Acme Shop:
-q a ae 5 wae “185 Portbello Rd) |
-‘[Execocare’), oy” Assue Date Nov.9,.2016 “London: Wil ILA: :
-1 a Delivery Date Nov.9;2016. — = (United Kingdom: . |
-: Client, Payment, . : |
-— “1 1" Ieaté re Bastitte: Payment Method Bank Transfer... ;
-42 Boulevard Bank Account — 8900,0000 0175 7814 1
-‘Saint-Germain <Order‘Number; 12348" " ~ oe
-i UFrance” "1 ":PaymentDetalts Lorem ipsum. . :
-‘ ar ae es oer Payment Terms: Net 15.
-fo ‘VAT: Number: FR90103402210; PO number: 581660:
-1
-i
-i
-_ . . . a . 1
-‘ITEM . - DESCRIPTION}? ‘QUANTITY: UNIT: "TAX: TOTAL
-}— :@) iBest’ot First’Niws,, {67% Cacio aw $9.98: do “$6968; |
-"@ Pink sea sa S7A% Cacao. 3 "$7,951 "20% ‘23°85 oe
-(@)iMaple‘and ibs: “lgsx'Gacag Fah ggg py gig
-Sesescoze pear peer azar eonopnanyr ene rmbar esse nomonnannenrreaastenasgrennenpranarannenneeetanasznegscqnennseaeensenneneste aeernnne ne earenecrerszraeceere essen tates |
-_ 1@):Smoxed'char: “G6% Cacao “2a: ‘67.95. 20% $3neo. | 1
-aise S44 Ges uoqdaieagascusiigunda ¥0UeNavAU qu ZA Ts¥L cus STS euea DE GER WOEU TEL aie OSEGUENEUUENDRASTYS0¥ E> v8 SUE EAD s x DEUS TEAS A ca CU aUai oS ADUHTTISH CaSCUDNBOA cag eas CAT OTIS E IB OARON |
-"TOTAL: {$192.90 USD,
-:VAT. 20% “$38.58 USD. i
-. ‘ ; JTOTALINGL: VAT: =~: [eeucousp | i
-nobis milland{ nis cnihiWateriminciumquatas ne; |i |
-; oo ; . ;Sondendus re nullentiea di offictum ut frvellaut: |
-. ‘ *y “quam solectaturem ot quibus ca'duciur,: | . |
-i 1
-aT | forsee ities |
-‘Agnimi, tes et et exces sitatibus qui comity, ut es~ iBT UE Is inGoles SilneR 4
-sum nobis milland nisenihillatenimi nciumquatas;: _ ‘Niew this'invoice onling at _. a 4 |
-nee _NUpi{www.loremipsum.com xxx xno: 1
-“emialt@company.com # (89) 6356-48018) ; . ‘Greated in Sufio; |
-“Wwittergacma: facebook oseme _ “Gnsiagrameicme we, ERE SE a he
-y +
-| & Ae cs oe ee ee ee 2 wae tet |
+PMBAT
+BA 8900000001757814
+
+SON12345
+DLI
+PTN15
+PO 581660
+
+SFOTAL
+NAT-208

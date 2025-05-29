@@ -6,5 +6,13 @@
     "po_number": null,
     "shipping_address": null,
     "seal_and_sign_present": false,
-    "items": []
+    "items": [
+        {
+            "serial_number": "1000",
+            "description": "YN 1000 4 1000\nI S\nYN 1000 1000\nMSH\nYN",
+            "quantity": "1000",
+            "unit_price": "4",
+            "total_amount": "4000"
+        }
+    ]
 }

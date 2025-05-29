@@ -1,21 +1,21 @@
-FIN TR Sty =~ 6477444712349 HikYourAddress¥
-W/ ©) your@emall:con eCity, SiglenCountry]
-Billed To; ‘invoice Number. “Invoice Total |
-‘Client Name 00000, $ A 59 0.0 0
-‘f Client Address: : Me
-City: State; Country Date OF Ss
-ZIP.CODE: 10/07/14
-\Description ‘Unit.Cost Qty./Hr.Rate Amount:
-Your.item Name: $1000. 1 41000!
-item description goes here
-“Your item’ Name: $1000 4 {000°
-Item description goes here
-Your item Name ‘$1000 4 1000:
-lem description goes riere
-“Your item Name; $1000 4 4000:
-{tem description goes here.
-Subtotal $4000.00
-Tax ‘$520.00.
-Toial $4520.00
-‘Invoice Terms
-‘Ex! Please pay. your invoice by..:: ‘Amount Due (USD) $4520.00
+6647-444-12349 YAS
+
+O
+
+BT IN ITO
+452000
+DO1
+40/07/14
+D UC Q/HR A
+YN 1000 4 -1000
+YN 1000 4 1000
+I S
+YN 1000 1000
+MSH
+YN 1000 4 4000
+SU 400000
+TX 52000
+T
+IT
+
+-EXPIB--- ADUSD 452000

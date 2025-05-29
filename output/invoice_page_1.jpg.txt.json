@@ -1,7 +1,7 @@
 {
-    "invoice_number": null,
-    "invoice_date": "4",
-    "supplier_gst_number": "S",
+    "invoice_number": "WSUGSTIR-",
+    "invoice_date": null,
+    "supplier_gst_number": "29AAFCA0924K1ZN",
     "bill_to_gst_number": null,
     "po_number": null,
     "shipping_address": null,
