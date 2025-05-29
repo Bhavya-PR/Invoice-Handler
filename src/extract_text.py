@@ -14,10 +14,17 @@ os.makedirs(output_text_folder, exist_ok=True)
 
 def extract_text(image_path):
     """Extracts text from an invoice image using optimized OCR settings."""
-    image = Image.open(image_path)
-    custom_config = r'--psm 6 --oem 3'  # Optimized for structured invoice text
-    text = pytesseract.image_to_string(image, config=custom_config)
-    return text.strip()
+    try:
+        image = Image.open(image_path)
+        
+        # Optimized OCR settings for structured data
+        custom_config = r'--psm 4 --oem 3 -c tessedit_char_whitelist=0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ/-'
+        text = pytesseract.image_to_string(image, config=custom_config)
+
+        return text.strip()
+    except Exception as e:
+        print(f"⚠️ Error processing {image_path}: {e}")
+        return ""
 
 # Process all images in the output folder
 for filename in os.listdir(input_folder):
@@ -30,6 +37,6 @@ for filename in os.listdir(input_folder):
         with open(text_file_path, "w", encoding="utf-8") as f:
             f.write(extracted_text)
 
-        print(f"Extracted text saved to: {text_file_path}")
+        print(f"✅ Extracted text saved to: {text_file_path}")
 
-print("OCR process completed successfully!")
+print("🎯 OCR process completed successfully!")
