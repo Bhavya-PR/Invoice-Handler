@@ -1,55 +1,49 @@
 {
     "invoice_number": "647244401234",
     "invoice_date": "10/07/14",
-    "supplier_gst_number": null,
-    "bill_to_gst_number": null,
-    "po_number": null,
-    "shipping_address": {
-        "address": ".",
-        "city": "City",
-        "state": "State",
-        "country": "Country",
-        "zip_code": "ZIP CODE"
-    },
+    "supplier_gst_number": "",
+    "bill_to_gst_number": "",
+    "po_number": "",
+    "shipping_address": "Client Address . City, State, Country ZIP CODE",
     "seal_and_sign_present": false,
     "no_items": 5,
     "items": [
         {
-            "serial_number": 1,
-            "description": "Your item description goes here",
-            "hsn_sac": null,
+            "serial_number": "",
+            "description": "Your item Name",
+            "hsn_sac": "",
             "quantity": 1,
             "unit_price": 1000,
             "total_amount": 1000
         },
         {
-            "serial_number": 2,
-            "description": "Your item description goes here",
-            "hsn_sac": null,
+            "serial_number": "",
+            "description": "Item description goes here",
+            "hsn_sac": "",
             "quantity": 1,
             "unit_price": 1000,
             "total_amount": 1000
         },
         {
-            "serial_number": 3,
-            "description": "Your item description goes here",
-            "hsn_sac": null,
+            "serial_number": "",
+            "description": "Item description goes here",
+            "hsn_sac": "",
             "quantity": 1,
             "unit_price": 1000,
             "total_amount": 1000
         },
         {
-            "serial_number": 4,
-            "description": "Your item description goes here",
-            "hsn_sac": null,
+            "serial_number": "",
+            "description": "Item description goes here",
+            "hsn_sac": "",
             "quantity": 1,
             "unit_price": 1000,
             "total_amount": 1000
         },
         {
-            "serial_number": 5,
+            "serial_number": "",
             "description": "Item descnplion goes here",
-            "hsn_sac": null,
+            "hsn_sac": "",
             "quantity": 1,
             "unit_price": 1000,
             "total_amount": 1000

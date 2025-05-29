@@ -5,12 +5,12 @@
     "bill_to_gst_number": "FR90103402210",
     "po_number": "581660",
     "shipping_address": "185 Portbello Rd, London, United Kingdom",
-    "seal_and_sign_present": false,
+    "seal_and_sign_present": true,
     "no_items": 4,
     "items": [
         {
             "serial_number": "O",
-            "description": "Dest of First Nibs Cacao",
+            "description": "Dest of First Nibs 67% Cacao",
             "hsn_sac": "67%",
             "quantity": 7,
             "unit_price": 9.95,
@@ -18,7 +18,7 @@
         },
         {
             "serial_number": "O",
-            "description": "Pink Sea Salt Cacao",
+            "description": "Pink Sea Salt 71% Cacao",
             "hsn_sac": "71%",
             "quantity": 3,
             "unit_price": 795,
@@ -26,7 +26,7 @@
         },
         {
             "serial_number": "O",
-            "description": "and Nibs Cacao",
+            "description": "and Nibs 75% Cacao",
             "hsn_sac": "75%",
             "quantity": 2,
             "unit_price": 6.95,
@@ -34,7 +34,7 @@
         },
         {
             "serial_number": "O",
-            "description": "Smoked Chat Cacao",
+            "description": "Smoked Chat 66% Cacao",
             "hsn_sac": "66%",
             "quantity": 4,
             "unit_price": 7.95,

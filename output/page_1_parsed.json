@@ -4,8 +4,8 @@
     "supplier_gst_number": "29AAFCAQ924K1ZN",
     "bill_to_gst_number": "29AAFCAQ924K1ZN",
     "po_number": "856",
-    "shipping_address": "150/1, INFANTRY ROAD, OPP COMMISSIONER OFFICE, VASANTH NAG, BENGALURU - 560045.",
-    "seal_and_sign_present": true,
+    "shipping_address": "INFANTRY ROAD, OPP COMMISSIONER OFFICE, VASANTH NAG, BENGALURU-560045.",
+    "seal_and_sign_present": false,
     "no_items": 1,
     "items": [
         {
@@ -13,8 +13,8 @@
             "description": "TIGOR",
             "hsn_sac": "401040",
             "quantity": 1,
-            "unit_price": 1200.0,
-            "total_amount": 1200.0
+            "unit_price": 120000.0,
+            "total_amount": 120000.0
         }
     ]
 }
