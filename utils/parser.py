@@ -1,9 +1,11 @@
 import os
 import re
+import json
 from dotenv import load_dotenv
 from utils.ocr_utils import extract_text_with_layout, extract_text
 from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate
+from langchain_core.output_parsers import StrOutputParser
 
 # Load .env variables
 load_dotenv()
@@ -12,7 +14,8 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 # Initialize the Groq LLM
 llm = ChatGroq(
     groq_api_key=GROQ_API_KEY,
-    model_name="llama3-70b-8192"
+    model_name="llama3-70b-8192",
+    temperature=0
 )
 
 # Define the prompt
@@ -39,30 +42,46 @@ Respond only with the JSON output.
 """
 )
 
-# Use the new pipe syntax: prompt | llm
-chain = prompt_template | llm
+# Combine prompt → LLM → output parser
+chain = prompt_template | llm | StrOutputParser()
 
-# Function to extract JSON block from text
+# Function to extract JSON from response text
 def extract_json_from_response(response_text):
-    match = re.search(r"\{.*\}", response_text, re.DOTALL)
-    if match:
-        return match.group(0)
-    return "{}"
+    try:
+        return json.dumps(json.loads(response_text), indent=2)
+    except:
+        match = re.search(r"\{.*\}", response_text, re.DOTALL)
+        if match:
+            try:
+                return json.dumps(json.loads(match.group(0)), indent=2)
+            except:
+                return json.dumps({"error": "Failed to parse extracted JSON."})
+        return json.dumps({"error": "No valid JSON found in response."})
+
 
 # Main parser function
 def parse_invoice_fields(image, use_layout=True):
-    # OCR extraction
+    # OCR Extraction
     if use_layout:
         ocr_data = extract_text_with_layout(image)
-        text_blocks = "\n".join([f"{item['text']} (pos: {item['top']},{item['left']})" for item in ocr_data])
+        text_blocks = "\n".join(
+            [f"{item['text']} (pos: {item['top']},{item['left']})" for item in ocr_data]
+        )
     else:
         text_blocks = extract_text(image)
 
-    # Run the LLM chain
-    response = chain.invoke({"ocr_text": text_blocks})
+    # Check for empty OCR text
+    if not text_blocks.strip() or len(text_blocks.strip()) < 30:
+        return json.dumps({
+            "error": "OCR result is too empty or unclear to parse."
+        }, indent=2)
 
-    # Extract just the JSON string
-    response_text = response.content
-    json_only = extract_json_from_response(response_text)
-
-    return json_only
+    try:
+        # Run LLM chain
+        response_text = chain.invoke({"ocr_text": text_blocks})
+        json_only = extract_json_from_response(response_text)
+        return json_only
+    except Exception as e:
+        return json.dumps({
+            "error": f"Exception while invoking LLM: {str(e)}"
+        }, indent=2)
