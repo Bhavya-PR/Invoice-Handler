@@ -1,69 +1,91 @@
 import os
-import cv2
 import json
-
-from utils.parser import parse_invoice_fields  # Your parser function that takes an image
+import fitz  # PyMuPDF
+import cv2
+import numpy as np
+from utils.parser import parse_invoice_fields
 from utils.validator import validate_invoice_data
-from utils.exporter import combine_parsed_jsons, json_to_excel, generate_verifiability_report
-from utils.image_utils import crop_seal_signature
-from utils.ocr_utils import extract_text_with_layout  # For cropping seal/sign
+from utils.exporter import json_to_excel
 
-def main():
-    input_folder = "input"
-    output_folder = "output"
-    os.makedirs(output_folder, exist_ok=True)
+INPUT_FOLDER = "input"
+OUTPUT_FOLDER = "output"
 
-    images = sorted([f for f in os.listdir(input_folder) if f.endswith(".png") or f.endswith(".jpg")])
-    parsed_jsons = []
-    validation_results = []
+if not os.path.exists(OUTPUT_FOLDER):
+    os.makedirs(OUTPUT_FOLDER)
 
-    for idx, image_file in enumerate(images):
-        page_num = idx + 1
-        image_path = os.path.join(input_folder, image_file)
-        image = cv2.imread(image_path)
+pdf_files = [f for f in os.listdir(INPUT_FOLDER) if f.lower().endswith(".pdf")]
 
-        print(f"Processing page {page_num}: {image_file}")
+parsed_jsons = []
+validation_results = []
 
-        # Run OCR separately to get bounding boxes for seal/sign cropping
-        ocr_data = extract_text_with_layout(image)
+def pdf_to_images(pdf_path):
+    images = []
+    doc = fitz.open(pdf_path)
+    for page in doc:
+        pix = page.get_pixmap(dpi=300)
+        img = np.frombuffer(pix.samples, dtype=np.uint8).reshape(pix.height, pix.width, pix.n)
+        if pix.n == 4:
+            img = cv2.cvtColor(img, cv2.COLOR_BGRA2BGR)
+        images.append(img)
+    return images
 
-        # Parse invoice fields (this runs OCR internally on the image)
-        parsed_json_str = parse_invoice_fields(image)
-        try:
-            parsed_json = json.loads(parsed_json_str)
-        except json.JSONDecodeError:
-            parsed_json = {"error": "Failed to decode JSON from parser output."}
+for pdf_file in pdf_files:
+    file_path = os.path.join(INPUT_FOLDER, pdf_file)
+    print(f"\n📄 Processing {pdf_file}...")
 
-        # Save per-page JSON
-        json_path = os.path.join(output_folder, f"page_{page_num}_parsed.json")
-        with open(json_path, 'w', encoding='utf-8') as f:
-            json.dump(parsed_json, f, indent=4)
-        parsed_jsons.append(parsed_json)
+    try:
+        # Step 1: Convert PDF to images
+        images = pdf_to_images(file_path)
 
-        # Validate invoice data
-        validation_result = validate_invoice_data(parsed_json)
-        validation_results.append(validation_result)
+        for page_num, image in enumerate(images, start=1):
+            print(f"\n🔍 Page {page_num}: Running LLM parser...")
 
-        # Crop seal and signature using OCR layout data
-        crop_seal_signature(image, ocr_data, output_folder, page_num)
+            # Step 2: Parse with LLM
+            parsed_json_str = parse_invoice_fields(image, use_layout=True)
 
-    # Combine all per-page JSONs into one list
-    combined_json = combine_parsed_jsons(output_folder)
+            try:
+                parsed_json = json.loads(parsed_json_str)
+            except json.JSONDecodeError:
+                parsed_json = {"error": "Failed to decode JSON from parser output."}
 
-    # Safety check: lengths must match to generate report correctly
-    if len(combined_json) != len(validation_results):
-        print("❌ Warning: Number of parsed JSON entries and validation results do not match!")
-        print(f"Parsed JSON count: {len(combined_json)}")
-        print(f"Validation results count: {len(validation_results)}")
-        print("Verifiability report generation skipped to avoid empty or mismatched report.")
-    else:
-        # Generate verifiability report with combined JSON and validation results
-        generate_verifiability_report(combined_json, validation_results, output_folder)
+            # Save parsed JSON
+            json_path = os.path.join(OUTPUT_FOLDER, f"{pdf_file}_page_{page_num}_parsed.json")
+            with open(json_path, "w", encoding="utf-8") as f:
+                json.dump(parsed_json, f, indent=4)
+            parsed_jsons.append(parsed_json)
 
-    # Export combined JSON to Excel
-    json_to_excel(combined_json, os.path.join(output_folder, "extracted_data.xlsx"))
+            # Step 3: Validation
+            if "error" in parsed_json:
+                validation_result = {
+                    "is_valid": False,
+                    "errors": [parsed_json["error"]]
+                }
+            else:
+                validation_result = validate_invoice_data(parsed_json)
 
-    print("All processing done successfully!")
+            print(f"✅ Validation result for page {page_num}: {validation_result}")
+            validation_results.append(validation_result)
 
-if __name__ == "__main__":
-    main()
+    except Exception as e:
+        print(f"❌ Error processing {pdf_file}: {str(e)}")
+
+# Step 4: Save combined JSON
+combined_path = os.path.join(OUTPUT_FOLDER, "extracted_data.json")
+with open(combined_path, "w", encoding="utf-8") as f:
+    json.dump(parsed_jsons, f, indent=4)
+print("\n✅ Combined JSON saved to output\\extracted_data.json")
+
+# Step 5: Summary and Export
+print("\n📊 Summary:")
+print(f"🔢 Parsed JSON count: {len(parsed_jsons)}")
+print(f"🛡️ Validation results count: {len(validation_results)}")
+
+if len(parsed_jsons) == len(validation_results):
+    json_to_excel(parsed_jsons, validation_results, os.path.join(OUTPUT_FOLDER, "extracted_data.xlsx"))
+    print("📈 Excel file saved to output\\extracted_data.xlsx")
+    print("✅ Verifiability report generated!")
+else:
+    print("❌ Mismatch between parsed JSON and validation results.")
+    print("🛑 Verifiability report skipped.")
+
+print("\n🎉 All processing done successfully!")
