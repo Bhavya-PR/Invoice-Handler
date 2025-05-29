@@ -7,14 +7,20 @@ def combine_parsed_jsons(output_folder="output"):
     for filename in sorted(os.listdir(output_folder)):
         if filename.endswith("_parsed.json"):
             filepath = os.path.join(output_folder, filename)
-            with open(filepath, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-                combined.append(data)
+            try:
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+                    combined.append(data)
+            except json.JSONDecodeError as e:
+                print(f"❌ Failed to parse {filename}: {e}")
+            except Exception as e:
+                print(f"⚠️ Unexpected error with {filename}: {e}")
     combined_path = os.path.join(output_folder, "extracted_data.json")
     with open(combined_path, 'w', encoding='utf-8') as f:
         json.dump(combined, f, indent=4)
-    print(f"Combined JSON saved to {combined_path}")
+    print(f"✅ Combined JSON saved to {combined_path}")
     return combined
+
 
 def json_to_excel(json_data, excel_path="output/extracted_data.xlsx"):
     rows = []
