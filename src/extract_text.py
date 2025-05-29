@@ -13,9 +13,10 @@ output_text_folder = r"C:\Users\HP\OneDrive\Desktop\FRONT END COURSE\Portfolio\P
 os.makedirs(output_text_folder, exist_ok=True)
 
 def extract_text(image_path):
-    """Extracts text from an invoice image using Tesseract OCR."""
+    """Extracts text from an invoice image using optimized OCR settings."""
     image = Image.open(image_path)
-    text = pytesseract.image_to_string(image)
+    custom_config = r'--psm 6 --oem 3'  # Optimized for structured invoice text
+    text = pytesseract.image_to_string(image, config=custom_config)
     return text.strip()
 
 # Process all images in the output folder
