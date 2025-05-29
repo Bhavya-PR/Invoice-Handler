@@ -1,55 +1,39 @@
-INVOICE ““"
-
-“ Acme Shop
-ID 2016-10014 Noa Petnena Ral
-laowe Date Nov 9. 2016 London W11 1LA
-Detivery Date Nov 9. 2016 United Kingdom
-
-Dae! ate! Nov:25./2016 VAT Number GB20220019
-
-Client Payment
-
-Café Le Bastille Payment Method Bank Transte:
-
-42 Boulevard Bank Account 8900 0000 0175 7814
-
-Saint-Germain Order Number 12345
-
-75006 Paris
-
-France Payment Details Lorem ipsum
-Payment Terms Net 15
-
-VAT Numbet FR90103402210 PO number 581660
-
-ITEM DESCRIPTION QUANTITY UNIT TAX TOTAL
-
-@ Best of First Nive
-
-e Maple and Ni
-@ coconut Max
-
-@ Smoked Chai
-
-TOTAL $192 90 USD
-
-VAT 20% $38 58 USD
-
-TOTAL INCL VAT po
-Mero OE
-
-Agnimi, tes et et exces sitatibus qui comnit, ut essum
-nobis milland: nis enshill atenumi nciumquatas ne
-consendus re nullent ea 4) officium ut invellaut
-quam solectaturem et quibus #a duciur
-
-Lorem Ipsum
-
-deeseeeaceseeae cae caessesseseeaeesseeenseesaseesensensneensenennenee
-AQnIM tes ef et exces utatibus qui comnit.v ut
-Sum nobis milland: nis enthill atenims nctumquatas View this invoice online at
-
-http //erww loremipeurm cOm/xmnranuzax
-emalGcampeny com 1 (09) 636-40018 Created in Sutie
-
-fatter Gace teccbook oc me euetoqvem Go: me
+ACME INVOICE = — |
+‘a 4 me Ip 301610014. ‘Acme Shop:
+fee 23 ID 2016-10014 - ‘Acme Shop:
+q a ae 5 wae “185 Portbello Rd) |
+‘[Execocare’), oy” Assue Date Nov.9,.2016 “London: Wil ILA: :
+1 a Delivery Date Nov.9;2016. — = (United Kingdom: . |
+: Client, Payment, . : |
+— “1 1" Ieaté re Bastitte: Payment Method Bank Transfer... ;
+42 Boulevard Bank Account — 8900,0000 0175 7814 1
+‘Saint-Germain <Order‘Number; 12348" " ~ oe
+i UFrance” "1 ":PaymentDetalts Lorem ipsum. . :
+‘ ar ae es oer Payment Terms: Net 15.
+fo ‘VAT: Number: FR90103402210; PO number: 581660:
+1
+i
+i
+_ . . . a . 1
+‘ITEM . - DESCRIPTION}? ‘QUANTITY: UNIT: "TAX: TOTAL
+}— :@) iBest’ot First’Niws,, {67% Cacio aw $9.98: do “$6968; |
+"@ Pink sea sa S7A% Cacao. 3 "$7,951 "20% ‘23°85 oe
+(@)iMaple‘and ibs: “lgsx'Gacag Fah ggg py gig
+Sesescoze pear peer azar eonopnanyr ene rmbar esse nomonnannenrreaastenasgrennenpranarannenneeetanasznegscqnennseaeensenneneste aeernnne ne earenecrerszraeceere essen tates |
+_ 1@):Smoxed'char: “G6% Cacao “2a: ‘67.95. 20% $3neo. | 1
+aise S44 Ges uoqdaieagascusiigunda ¥0UeNavAU qu ZA Ts¥L cus STS euea DE GER WOEU TEL aie OSEGUENEUUENDRASTYS0¥ E> v8 SUE EAD s x DEUS TEAS A ca CU aUai oS ADUHTTISH CaSCUDNBOA cag eas CAT OTIS E IB OARON |
+"TOTAL: {$192.90 USD,
+:VAT. 20% “$38.58 USD. i
+. ‘ ; JTOTALINGL: VAT: =~: [eeucousp | i
+nobis milland{ nis cnihiWateriminciumquatas ne; |i |
+; oo ; . ;Sondendus re nullentiea di offictum ut frvellaut: |
+. ‘ *y “quam solectaturem ot quibus ca'duciur,: | . |
+i 1
+aT | forsee ities |
+‘Agnimi, tes et et exces sitatibus qui comity, ut es~ iBT UE Is inGoles SilneR 4
+sum nobis milland nisenihillatenimi nciumquatas;: _ ‘Niew this'invoice onling at _. a 4 |
+nee _NUpi{www.loremipsum.com xxx xno: 1
+“emialt@company.com # (89) 6356-48018) ; . ‘Greated in Sufio; |
+“Wwittergacma: facebook oseme _ “Gnsiagrameicme we, ERE SE a he
+y +
+| & Ae cs oe ee ee ee 2 wae tet |
