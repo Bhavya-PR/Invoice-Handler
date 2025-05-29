@@ -12,10 +12,10 @@
     },
     "confidence_scores": {
         "invoice_number": 0.92,
-        "invoice_date": 0.99,
-        "supplier_gst_number": 0.8,
-        "bill_to_gst_number": 0.87,
-        "po_number": 0.93
+        "invoice_date": 0.88,
+        "supplier_gst_number": 0.84,
+        "bill_to_gst_number": 0.83,
+        "po_number": 0.82
     },
     "warnings": [
         "Subtotal calculation mismatch.",

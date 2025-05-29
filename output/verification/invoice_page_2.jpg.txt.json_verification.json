@@ -12,12 +12,12 @@
         "final_total_valid": false
     },
     "confidence_scores": {
-        "invoice_number": 0.78,
-        "invoice_date": 0.84,
-        "supplier_gst_number": 0.96,
-        "bill_to_gst_number": 0.77,
-        "po_number": 0.85,
-        "YN 1000 4 1000\nI S\nYN 1000 1000\nMSH\nYN": 0.96
+        "invoice_number": 0.89,
+        "invoice_date": 0.73,
+        "supplier_gst_number": 0.86,
+        "bill_to_gst_number": 0.92,
+        "po_number": 0.83,
+        "YN 1000 4 1000\nI S\nYN 1000 1000\nMSH\nYN": 0.71
     },
     "warnings": [
         "Subtotal calculation mismatch.",
