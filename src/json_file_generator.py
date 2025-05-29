@@ -1,16 +1,15 @@
 import re
 import json
 import os
+from langchain_groq import extract_with_groqcloud_api  # GroqCloud AI integration
 
-# Directory for extracted text and parsed JSON output
 input_text_folder = r"C:\Users\HP\OneDrive\Desktop\FRONT END COURSE\Portfolio\Portfolio-master\Yavar.AI-Hackathon-PS-1\output\text"
 output_json_folder = r"C:\Users\HP\OneDrive\Desktop\FRONT END COURSE\Portfolio\Portfolio-master\Yavar.AI-Hackathon-PS-1\output"
 
-# Ensure output directory exists
 os.makedirs(output_json_folder, exist_ok=True)
 
 def extract_field(text, patterns):
-    """Extracts fields using multiple regex patterns."""
+    """Extract fields using multiple regex patterns."""
     for pattern in patterns:
         match = re.search(pattern, text, re.IGNORECASE)
         if match:
@@ -22,7 +21,7 @@ def parse_invoice(text_file):
     with open(text_file, "r", encoding="utf-8") as f:
         raw_text = f.read()
 
-    # Extract invoice details using regex-based matching
+    # Try regex-based extraction first
     parsed_data = {
         "invoice_number": extract_field(raw_text, [
             r"Invoice\s*No\.*\s*([\w-]+)",  
@@ -54,17 +53,12 @@ def parse_invoice(text_file):
         "items": []
     }
 
-    # Extract line items dynamically
-    line_item_pattern = re.compile(r"(\d+)\s+([\w\s]+)\s+(\d+)\s+([\d\.]+)\s+([\d\.]+)")
-    for match in line_item_pattern.findall(raw_text):
-        item = {
-            "serial_number": match[0],
-            "description": match[1].strip(),
-            "quantity": match[2],
-            "unit_price": match[3],
-            "total_amount": match[4]
-        }
-        parsed_data["items"].append(item)
+    # If Invoice Number is missing, use AI-powered parsing
+    if not parsed_data["invoice_number"]:
+        print("\n⚠️ Invoice number missing! Using AI-powered parsing...\n")
+        structured_data = extract_with_groqcloud_api(raw_text)
+        parsed_data["invoice_number"] = structured_data.get("invoice_number", None)
+        parsed_data.update(structured_data)  # Merge extracted fields
 
     return parsed_data
 
@@ -81,4 +75,4 @@ for filename in os.listdir(input_text_folder):
 
         print(f"Parsed invoice saved to: {json_output_path}")
 
-print("Invoice parsing completed successfully!")
+print("✅ Hybrid invoice parsing completed successfully!")
