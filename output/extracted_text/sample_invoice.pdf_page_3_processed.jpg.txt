@@ -1,0 +1,97 @@
+I new YOR, i,
+
+' ACME INVOICE “
+
+[ Acme Shop 2s
+
+fi ID 2016-10014
+
+i 185 Portbello Rd
+
+I Issuo Date Nov 9,.2016 London WIE ILA
+
+( Delivery Dato Nov 9, 2016 United Kingdom
+
+t nm ote pee
+
+i Due Date Nov23, 2016 vaT Number: GB202208019, ————__—
+
+|
+
+| Cllent Payment
+
+H Café Le Bastille Payment Method Bank Transter
+
+| 42 Boulevard Bank Account 8900 0000 0175 7814
+
+Saint-Germain Order Number 12345 __
+
+H 75006 Paris .
+
+| France Payment Details = Lorem ipsum
+Payment Terms Netw 15
+
+$$m VAT Number: FR90103402210 PO number 581660
+
+3
+
+fy
+
+|
+
+4
+
+I
+
+ITEM DESCRIPTION QUANTITY UNIT TAX TOTAL
+
+| ©) Best of First Nibs 67% Cacao 7 $9.95 20% $69.65
+
+: O Pink sea sat 71% Cacao 3 $7.95 20% $23.85
+
+| © Maple and Nibs 75% Cacao 2 $6.95 20% ——_———-$33-99-—_____
+
+7 © coconut Mink 60% Cacao 6 $8.95 20% $53.70
+
+; O Smoked Chat 66% Cacao 4 $7.95 20% $31.80
+
+iJ
+
+G TOTAL $192.90 USD
+
+i VAT 20% $38.58 USD ———
+
+| TOTAL INCL. VAT [ encousp |
+
+| NN
+
+: Notes
+
+i Aqnimt, tes at ot exces aflitibus qui comnit, ul essum
+nobis miltandt nis enthill atenimt nciumaquatas ne
+
+. consondus re nullent ea di officium ut-invollaut
+
+o quam solectaturem at quibus ca duciur
+
+. Lorem Ipsum
+
+Thank yout ceseeesessccesecccscenenssasseesssssessssssscscssssscsnuansansssneseeees
+
+H Agnimi, tes et et exces sitaulbus qui comnityv ules-
+
+i stim nobis millands nis enihill atonimi netumaquatas. View this invoice online at
+
+it HUps// www. lorem Ipsum. com/xxxxxxxxxx
+
+i
+
+l emailacompany.com +1 (09) 636-48018 Created in Sufio
+
+i Iwittor Qacme lacebook Gacme tnatagram oacme
+
+f
+
+it
+
+3

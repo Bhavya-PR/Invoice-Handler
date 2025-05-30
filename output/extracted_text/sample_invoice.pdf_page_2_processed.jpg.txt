@@ -1,0 +1,22 @@
+647244451234) 1 Your Ackiess
+| INV | GC E your@emiallfcom Ghy, Seta, Gounithy
+yourwebsitetcom PZIPICODE:
+Billed To Invoice Number Invoice Total
+Client Name 000000 $
+1 Cllent Address 4 52 0 . 0 0
+City, State, Country Date Of Issue
+ZIP CODE 10/07/14
+Description Unit Cost Qty / Hr Rate Amount
+Your item Name $1000 1 1000
+Item description goes here
+Your item Name $1000 1 1000
+Item description goes here
+Your Item Name $1000 1 1000
+Item description goes hare
+Your Item Name $1000 1 1000
+Item description goes here
+Subtotal $4000.00
+Tax $520.00
+Total $4520.00
+Invoice Terms
+Ex. Please pay your Involce by.... Amount Due (USD) $4520.00
