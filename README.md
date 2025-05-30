@@ -1,106 +1,171 @@
-# Yavar.AI Hackathon Invoice Handler
 
-# Invoice Extraction & Verification System
+# 📄 Yavar.AI Hackathon – Invoice Extraction & Verification System
+
+An AI-Powered Invoice Processing System designed for automated, accurate, and scalable financial document handling. It uses **OCR**, **Computer Vision**, and **LLM-based parsing** to extract, validate, and structure invoice data from scanned PDFs into **JSON** and **Excel reports**, with intelligent verification using **seal/signature detection** and **missing detail inference**.
+
+![Workflow](workflow.jpg)
+
+---
 
 ## 🚀 Overview
 
-An Automated Invoice Processing System utilizes **OCR (Tesseract)** and **YOLOv8** to extract, validate, and process invoice data efficiently. It converts PDFs into structured **JSON and Excel reports**, ensuring accurate financial document handling while detecting seals/signatures for verification. Additionally, **Groq's Llama3 model** enhances text parsing, intelligently correcting and inferring missing invoice details.
-![alt text](workflow.jpg)
+This system performs the following:
+- Converts **PDFs to images**
+- Applies **preprocessing** to enhance OCR clarity
+- Extracts **invoice text** using **Tesseract OCR**
+- Detects **seals and signatures** using **YOLOv8**
+- Parses text into **structured JSON** using **Groq's Llama3**
+- Validates & assigns **confidence scores**
+- Outputs **Excel reports** using **Pandas**
+
+---
 
 ## 🛠 Technologies Used
 
-- **Python** → Main programming language for processing
+| Technology                 | Description                                           |
+|----------------------------|-------------------------------------------------------|
+| **Python**                 | Main programming language                             |
+| **Tesseract OCR**          | Extracts text from invoice images                     |
+| **PDF2Image**              | Converts PDFs into images                             |
+| **OpenCV**                 | Image preprocessing (grayscale, thresholding, etc.)   |
+| **YOLOv8**                 | Detects seals/signatures                              |
+| **Pandas**                 | Converts structured JSON to Excel                     |
+| **LangChain + Llama3**     | LLM-based intelligent parsing and correction          |
+| **Regex**                  | Refines extracted text                                |
+| **dotenv**                 | Manages environment variables                         |
+| **Subprocess**             | Dynamically runs OCR & model commands                 |
+| **NumPy**                  | Image and array operations                            |
 
-- **Tesseract OCR** → Optical character recognition for text extraction
+---
 
-- **PDF2Image** → Converts PDFs into images for better OCR accuracy
+## 🔧 Preprocessing Steps for OCR Optimization
 
-- **OpenCV** → Preprocesses images (grayscale, sharpening, noise removal)
+- 🎨 **Grayscale conversion** to eliminate background noise
+- 🖤 **Adaptive thresholding** to improve text contrast
+- 🌪 **Denoising** using Gaussian & Non-Local Means (NLM)
+- 🛠 **Morphological operations** to clean broken characters
+- 🧾 **Regex formatting** for standardizing invoice content
 
-- **YOLOv8** → Deep learning model for seal/signature detection
+---
 
-- **Pandas** → Handles structured data, converts JSON to Excel output
+## 🧠 LLM Parsing & Optimization
 
-- **LangChain & Groq's Llama3** → LLM-based intelligent text parsing & correction
+- 🧠 Engineered prompts to guide **Groq’s Llama3** for clean structured output
+- 🧪 Confidence scoring to evaluate data reliability
+- ⚙️ Refined invoice field extraction using pattern rules
+- 🔍 Corrects missing or unclear data intelligently
 
-- **dotenv** → Manages environment variables for API security
+---
 
-- **JSON** → Stores extracted invoice data in a structured format
+## 📈 Fine-Tuning Summary
 
-- **Regex** → Cleans and refines OCR-extracted text
+| Component         | Optimization Done                                  |
+|------------------|-----------------------------------------------------|
+| **Tesseract OCR**| Used `--psm 6 --oem 3` for layout-aware accuracy     |
+| **YOLOv8**       | Adjusted IoU & confidence thresholds for seals      |
+| **Llama3**       | Prompt engineering for precise JSON formatting      |
+| **Regex**        | Cleaned and formatted key fields                    |
 
-- **Subprocess** → Executes pipeline components dynamically
+---
 
-- **cv2 (OpenCV)** → Image transformations & noise reduction
+## 📁 File Structure
 
-- **NumPy** → Efficient array handling for image and text processing
+```
+invoice_extractor/
+├── input/                  # Input PDF files
+├── output/                 # JSON/Excel output
+├── utils/                  
+│   ├── ocr_utils.py        # OCR and preprocessing logic
+│   ├── parser.py           # LLM-based text parsing
+│   ├── validator.py        # Field validation & confidence scores
+│   ├── exporter.py         # Export to Excel
+├── main.py                 # Entry point
+├── requirements.txt        # Dependencies
+└── README.md               # Project documentation
+```
 
-## 🚀 How to Run the Project
+![File Structure](file_structure.png)
 
-**1️⃣ Clone the Repository**
+---
+
+## 🧪 How to Run the Project
+
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/Bhavya-PR/Yavar.AI-Hackathon-Invoice-Handler
 cd invoice-processing-system
 ```
 
-**2️⃣ Install Dependencies**
+### 2️⃣ Install Python Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 3️⃣ Install & Configure Tesseract OCR
+---
 
-**📥 Download & Install Tesseract**
-Download the latest version from: Tesseract-OCR for Windows
+### 3️⃣ Install & Configure Tesseract OCR
 
-Install it to the default directory:
+📥 [Download Tesseract for Windows](https://github.com/tesseract-ocr/tesseract)
 
+Default install path:
 ```bash
 C:\Program Files\Tesseract-OCR\
 ```
 
-## 🔧 Configure Tesseract in Your Project
-
-After installation, set the Tesseract path directly in your code (as you've already done):
-
-```bash
+Add this to your script:
+```python
 import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 ```
 
-## 4️⃣ Install & Configure Poppler for Windows
+---
 
-**📥 Download & Install Poppler**
-Download Poppler from: Poppler for Windows
+### 4️⃣ Install & Configure Poppler
 
-Extract the Poppler ZIP and move it to:
+📥 [Download Poppler for Windows](http://blog.alivate.com.au/poppler-windows/)
 
+Extract and move to:
 ```bash
 C:\Program Files\poppler-24.08.0\
 ```
 
-## 🔧 Configure Poppler in Your Project
-
-Set the Poppler path in preprocess.py:
-
-```bash
+Update your script:
+```python
 from pdf2image import convert_from_path
 POPPLER_PATH = r"C:\Program Files\poppler-24.08.0\Library\bin"
-
 pages = convert_from_path(pdf_path, dpi=300, poppler_path=POPPLER_PATH)
 ```
 
-## 5️⃣ Run the Project
+---
+
+### 5️⃣ Run the Project
 
 ```bash
 python main.py
 ```
 
-## File Structure
-![alt text](file_structure.png)
+---
 
-## Demo Video
-[Demo Video For Invoice Handler](https://drive.google.com/drive/folders/11QP1McS6u0orVLN1PsFPv4WMIqK5LtCI?usp=sharing)
-**Kindly ensure the video is viewed in high resolution for optimal clarity.**
+## 🎥 Demo Video
+
+🔗 [Click here to view the demo](https://drive.google.com/drive/folders/11QP1McS6u0orVLN1PsFPv4WMIqK5LtCI?usp=sharing)
+
+> 🎥 *Ensure HD quality for the best viewing experience.*
+
+---
+
+## 🤝 Contributing
+
+If you'd like to improve or extend the system, feel free to fork, make changes, and open a pull request!
+
+---
+
+## 📩 Contact
+
+For any questions or feedback, reach out via GitHub or email 📬.
+
+---
+
+> ⚡ Powered by AI, Automation & Creativity – Built with ❤️ for the Yavar.AI Hackathon
