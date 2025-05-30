@@ -20,6 +20,7 @@ llm = ChatGroq(
 # Define directories
 TEXT_INPUT_FOLDER = "output/extracted_text"
 JSON_OUTPUT_FOLDER = "output/parsed_json"
+COMBINED_JSON_FILE = "output/extracted_data.json"
 
 def ensure_folder_exists(folder_path):
     """Creates a folder if it does not exist."""
@@ -36,10 +37,6 @@ def preprocess_text(text):
     text = re.sub(r"[^a-zA-Z0-9\s:/.,-]", "", text)  # Remove unwanted symbols
     text = re.sub(r"\s{2,}", " ", text)  # Reduce excessive spaces
     text = re.sub(r"(\d{2})/(\d{2})/(\d{4})", r"\1-\2-\3", text)  # Standardize dates
-
-    # Ensure item rows follow structured format: `serial_number | description | hsn_sac | quantity | unit_price | total_amount`
-    text = re.sub(r"(\d+)\s+([\w\s]+)\s+(\d+)\s+([\d.]+)\s+([\d.]+)", r"\1 | \2 | | \3 | \4 | \5", text)
-
     return text.strip()
 
 # Improved prompt for extracting structured JSON output
@@ -73,13 +70,8 @@ You are an expert at parsing invoice documents. Extract structured data from the
 # Combine prompt → LLM → output parser
 chain = prompt_template | llm | StrOutputParser()
 
-# Improved JSON extraction with validation
 def extract_json_from_response(response_text):
-    """
-    Extracts and verifies JSON structure from AI response.
-    - Removes extra non-JSON text
-    - Ensures structured item formatting
-    """
+    """Extracts and verifies JSON structure from AI response."""
     try:
         parsed_json = json.loads(response_text)
     except json.JSONDecodeError:
@@ -99,13 +91,11 @@ def extract_json_from_response(response_text):
 
     return parsed_json
 
-# Parse invoice details from extracted text files
 def parse_invoice_text_files():
-    """
-    Reads text files from 'output/extracted_text/',
-    extracts invoice fields using LLM, and saves structured JSON in 'output/parsed_json/'.
-    """
+    """Parses text files, saves individual JSON files, and combines all invoices."""
     ensure_folder_exists(JSON_OUTPUT_FOLDER)
+
+    combined_data = []  # Store all invoices for `extracted_data.json`
 
     for filename in os.listdir(TEXT_INPUT_FOLDER):
         if filename.endswith(".txt"):
@@ -114,7 +104,7 @@ def parse_invoice_text_files():
             with open(file_path, "r", encoding="utf-8") as f:
                 ocr_text = f.read().strip()
 
-            # Preprocess extracted text before sending to LLM
+            # Preprocess extracted text
             cleaned_text = preprocess_text(ocr_text)
 
             # Skip empty OCR results
@@ -134,8 +124,15 @@ def parse_invoice_text_files():
             with open(json_path, "w", encoding="utf-8") as json_file:
                 json.dump(parsed_data, json_file, indent=4)
 
+            combined_data.append(parsed_data)
             print(f"✅ Extracted JSON saved: {json_path}")
 
-# Example execution
+    # Save combined JSON data
+    with open(COMBINED_JSON_FILE, "w", encoding="utf-8") as combined_file:
+        json.dump(combined_data, combined_file, indent=4)
+
+    print(f"✅ Combined JSON saved as {COMBINED_JSON_FILE}")
+
+# Execute parser
 if __name__ == "__main__":
     parse_invoice_text_files()
