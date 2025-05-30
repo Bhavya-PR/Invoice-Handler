@@ -125,7 +125,7 @@ This system performs the following:
 
 ```bash
 git clone https://github.com/Bhavya-PR/Yavar.AI-Hackathon-Invoice-Handler
-cd invoice-processing-system
+cd Yavar.AI-Hackathon-Invoice-Handler
 ```
 
 ---
