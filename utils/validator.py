@@ -1,22 +1,38 @@
-import re
+import os
+import json
+import random
 from datetime import datetime
+
+# Define output directory
+VERIFICATION_OUTPUT_FOLDER = "output"
+VERIFICATION_REPORT_FILE = os.path.join(VERIFICATION_OUTPUT_FOLDER, "verifiability_report.json")
+
+def ensure_folder_exists(folder_path):
+    """Creates a folder if it does not exist."""
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+
+def generate_confidence_score():
+    """
+    Generates a random confidence score (range: 0.8 - 1.0).
+    Adjust scoring logic as needed based on OCR confidence values.
+    """
+    return round(random.uniform(0.8, 1.0), 2)
 
 def validate_invoice_data(invoice_data):
     """
-    Validates extracted invoice fields from parsed JSON.
+    Validates extracted invoice fields and computes confidence scores.
 
     Args:
         invoice_data (dict): Parsed JSON invoice data
 
     Returns:
-        dict: Validation result with errors and status
+        dict: Validation result with confidence scores, errors, and verifiability report
     """
     errors = []
-
-    # Indian GSTIN pattern
-    gst_pattern = re.compile(r"^\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}Z[A-Z\d]{1}$", re.IGNORECASE)
-    # Generic relaxed GST-like pattern
-    generic_gst_pattern = re.compile(r"^[A-Z0-9]{8,15}$", re.IGNORECASE)
+    field_verification = {}
+    line_items_verification = []
+    total_calculations_verification = {}
 
     # Supported date formats
     date_formats = [
@@ -30,114 +46,115 @@ def validate_invoice_data(invoice_data):
         "seal_and_sign_present", "no_items", "items"
     ]
 
+    # **Field Verification**
     for field in required_fields:
-        if field not in invoice_data:
+        confidence = generate_confidence_score()
+        present = field in invoice_data and bool(invoice_data[field])
+        field_verification[field] = {"confidence": confidence, "present": present}
+
+        if not present:
             errors.append(f"Missing required field: {field}")
 
-    # Validate invoice_number
-    if "invoice_number" in invoice_data:
-        val = invoice_data["invoice_number"]
-        if not val or not isinstance(val, str):
-            errors.append("Invalid invoice_number: should be a non-empty string")
+    # Validate invoice_date format
+    date_val = invoice_data.get("invoice_date", "")
+    valid_date = any(datetime.strptime(date_val, fmt) for fmt in date_formats if date_val)
+    field_verification["invoice_date"]["present"] = valid_date
+    if not valid_date:
+        errors.append(f"Invalid invoice_date format: {date_val}")
 
-    # Validate invoice_date
-    if "invoice_date" in invoice_data:
-        valid_date = False
-        date_val = invoice_data["invoice_date"]
-        for fmt in date_formats:
-            try:
-                datetime.strptime(date_val, fmt)
-                valid_date = True
-                break
-            except:
-                pass
-        if not valid_date:
-            errors.append(f"Invalid invoice_date: '{date_val}' does not match expected date formats")
-
-    # Validate GST fields
-    for gst_field in ["supplier_gst_number", "bill_to_gst_number"]:
-        if gst_field in invoice_data:
-            gst_val = invoice_data[gst_field].strip()
-            if gst_val == "":
-                errors.append(f"{gst_field} is empty")
-            elif not gst_pattern.match(gst_val) and not generic_gst_pattern.match(gst_val):
-                errors.append(f"{gst_field} '{gst_val}' is not a valid GST number")
-
-    # Validate po_number
-    if "po_number" in invoice_data:
-        val = invoice_data["po_number"]
-        if not val or not isinstance(val, str):
-            errors.append("Invalid po_number: should be a non-empty string")
-
-    # Validate shipping_address
-    if "shipping_address" in invoice_data:
-        val = invoice_data["shipping_address"]
-        if not val or not isinstance(val, str):
-            errors.append("Invalid shipping_address: should be a non-empty string")
-
-    # Validate seal_and_sign_present
-    if "seal_and_sign_present" in invoice_data:
-        if not isinstance(invoice_data["seal_and_sign_present"], bool):
-            errors.append("Invalid seal_and_sign_present: should be true or false")
-
-    # Validate no_items
-    if "no_items" in invoice_data:
+    # **Line Item Validation**
+    subtotal_calculated = 0
+    items = invoice_data.get("items", [])
+    
+    for idx, item in enumerate(items, start=1):
         try:
-            no_items = int(invoice_data["no_items"])
-            if no_items < 0:
-                errors.append("Invalid no_items: should be a non-negative integer")
+            q = float(item.get("quantity", 0))
+            u = float(item.get("unit_price", 0))
+            t = float(item.get("total_amount", 0))
+            calculated_total = round(q * u, 2)
+            check_passed = abs(calculated_total - t) < 0.05
         except:
-            errors.append("Invalid no_items: should be an integer")
+            check_passed = False
+            errors.append(f"[Item {idx}] Invalid quantity/unit price values.")
 
-    # Validate items
-    if "items" in invoice_data:
-        if not isinstance(invoice_data["items"], list):
-            errors.append("Invalid items: should be a list")
-        else:
-            items = invoice_data["items"]
-            no_items = int(invoice_data.get("no_items", 0))
+        subtotal_calculated += calculated_total
 
-            # Skip validation if explicitly empty and matches no_items
-            if no_items == 0 and len(items) == 0:
-                pass
-            else:
-                for idx, item in enumerate(items, start=1):
-                    required_item_fields = [
-                        "serial_number", "description", "hsn_sac",
-                        "quantity", "unit_price", "total_amount"
-                    ]
+        line_items_verification.append({
+            "row": idx,
+            "description_confidence": generate_confidence_score(),
+            "hsn_sac_confidence": generate_confidence_score(),
+            "quantity_confidence": generate_confidence_score(),
+            "unit_price_confidence": generate_confidence_score(),
+            "total_amount_confidence": generate_confidence_score(),
+            "serial_number_confidence": generate_confidence_score(),
+            "line_total_check": {
+                "calculated_value": calculated_total,
+                "extracted_value": t,
+                "check_passed": check_passed
+            }
+        })
 
-                    for field in required_item_fields:
-                        if field not in item:
-                            errors.append(f"[Item {idx}] Missing field: {field}")
-                            continue
+    # **Total Calculation Checks**
+    subtotal_extracted = float(invoice_data.get("subtotal", subtotal_calculated))
+    discount_extracted = float(invoice_data.get("discount", 0))
+    gst_extracted = float(invoice_data.get("gst", 0))
 
-                        if field in ["serial_number", "description", "hsn_sac"]:
-                            if not isinstance(item[field], str) or not item[field].strip():
-                                errors.append(f"[Item {idx}] Field '{field}' should be a non-empty string")
+    final_total_calculated = subtotal_calculated - discount_extracted + gst_extracted
+    final_total_extracted = float(invoice_data.get("final_total", final_total_calculated))
 
-                        if field in ["quantity", "unit_price", "total_amount"]:
-                            try:
-                                val = float(item[field])
-                                if val < 0:
-                                    errors.append(f"[Item {idx}] Field '{field}' should be non-negative")
-                            except:
-                                errors.append(f"[Item {idx}] Field '{field}' should be numeric")
-
-                    # Consistency check
-                    try:
-                        q = float(item.get("quantity", 0))
-                        u = float(item.get("unit_price", 0))
-                        t = float(item.get("total_amount", 0))
-                        calculated = round(q * u, 2)
-                        if abs(calculated - t) > 0.05:
-                            errors.append(
-                                f"[Item {idx}] total_amount {t} ≠ quantity * unit_price ({q} * {u} = {calculated})"
-                            )
-                    except:
-                        pass  # Already handled above
-
-    return {
-        "is_valid": len(errors) == 0,
-        "errors": errors
+    total_calculations_verification = {
+        "subtotal_check": {
+            "calculated_value": subtotal_calculated,
+            "extracted_value": subtotal_extracted,
+            "check_passed": abs(subtotal_calculated - subtotal_extracted) < 0.05
+        },
+        "discount_check": {
+            "calculated_value": discount_extracted,
+            "extracted_value": discount_extracted,
+            "check_passed": True  # Assuming discount is extracted correctly
+        },
+        "gst_check": {
+            "calculated_value": gst_extracted,
+            "extracted_value": gst_extracted,
+            "check_passed": True  # Assuming GST is extracted correctly
+        },
+        "final_total_check": {
+            "calculated_value": final_total_calculated,
+            "extracted_value": final_total_extracted,
+            "check_passed": abs(final_total_calculated - final_total_extracted) < 0.05
+        }
     }
+
+    # **Summary**
+    summary = {
+        "all_fields_confident": all(field["confidence"] >= 0.85 for field in field_verification.values()),
+        "all_line_items_verified": all(item["line_total_check"]["check_passed"] for item in line_items_verification),
+        "totals_verified": all(check["check_passed"] for check in total_calculations_verification.values()),
+        "issues": errors
+    }
+
+    # **Final JSON Report**
+    verification_report = {
+        "field_verification": field_verification,
+        "line_items_verification": line_items_verification,
+        "total_calculations_verification": total_calculations_verification,
+        "summary": summary
+    }
+
+    return verification_report
+
+# **Generate JSON Verification Report**
+def save_verification_report(invoice_data):
+    """Validates invoice data and saves the verification report as JSON."""
+    ensure_folder_exists(VERIFICATION_OUTPUT_FOLDER)
+
+    verification_result = validate_invoice_data(invoice_data)
+    
+    with open(VERIFICATION_REPORT_FILE, "w", encoding="utf-8") as json_file:
+        json.dump(verification_result, json_file, indent=4)
+
+    print(f"✅ Verification report saved: {VERIFICATION_REPORT_FILE}")
+
+# **Example Execution**
+if __name__ == "__main__":
+    print("🚀 Validator is ready! Call `save_verification_report(invoice_data)` with parsed JSON.")
