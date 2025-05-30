@@ -39,7 +39,7 @@ def json_to_excel():
     # Save to Excel
     df.to_excel(EXCEL_OUTPUT_FILE, index=False)
 
-    print(f"✅ Structured invoice data saved as {EXCEL_OUTPUT_FILE}")
+    print(f"Structured invoice data saved as {EXCEL_OUTPUT_FILE}")
 
 if __name__ == "__main__":
     json_to_excel

@@ -1,100 +1,97 @@
-H wew YOR, a
+I new YOR, i,
 
-| Issued by
+' ACME INVOICE “
 
-| ACME _ INVOICE
+[ Acme Shop 2s
 
-\ ID 2016-10014 Aeme Shop
+fi ID 2016-10014
 
-4 185 Portbello Rd
+i 185 Portbello Rd
 
-| Insue Date Nov 9, 2016 London W11 1LA
+I Issuo Date Nov 9,.2016 London WIE ILA
 
-f Delivery Date Nov 9, 2016 United Kingdom
+( Delivery Dato Nov 9, 2016 United Kingdom
 
-j Due Date Nov 23,2016 yar Number: GB202208019, ————_—
+t nm ote pee
 
-Fy
+i Due Date Nov23, 2016 vaT Number: GB202208019, ————__—
 
-i Client Payment
+|
 
-4 Café Le Bastille Payment Method Bank Transfer
+| Cllent Payment
 
-fi 42 Boulevard Bank Account 8900 0000 0175 7814
+H Café Le Bastille Payment Method Bank Transter
 
-i Saint-Germain Order Number 12345 __
+| 42 Boulevard Bank Account 8900 0000 0175 7814
 
-: 75006 Paris .
+Saint-Germain Order Number 12345 __
 
-, France Payment Details Lorem ipsum
+H 75006 Paris .
 
-Ws Payment Terms Net 15
+| France Payment Details = Lorem ipsum
+Payment Terms Netw 15
 
-S$ __ VAT Number: FR90103402210 PO number 581660
+$$m VAT Number: FR90103402210 PO number 581660
 
-I:
+3
 
-E
+fy
 
-i {TEM DESCRIPTION QUANTITY UNIT TAX TOTAL
+|
 
-!
+4
 
-7—— ©) Bestot First Nibs 67% Cacao 7 $9.95 20% $69.65
+I
 
-i © Pink Sea salt 71% Cacao 3 $7.95 20% $23.85
+ITEM DESCRIPTION QUANTITY UNIT TAX TOTAL
 
-ty Adnan baneseeeseenensunanannsoseDeODsseessGunanaouseneeeneseDAeaeaaGuAAaDonOeOEESGeaansnaGsGaeuOEDDDEASSAAGGHAGGGNAADESCCOHAEDEACAOEGONGLEODAESSSCEHEnensonoaaoausuDsspeneseaes
+| ©) Best of First Nibs 67% Cacao 7 $9.95 20% $69.65
 
-fi
+: O Pink sea sat 71% Cacao 3 $7.95 20% $23.85
 
-i @) Maple and Nibs 75% Cacao 2 $6.95 20% —______$13-99 ______
+| © Maple and Nibs 75% Cacao 2 $6.95 20% ——_———-$33-99-—_____
 
-t}
+7 © coconut Mink 60% Cacao 6 $8.95 20% $53.70
 
-i @® coconut Mitk 60% Cacao 6 $8.95 20% $53.70
+; O Smoked Chat 66% Cacao 4 $7.95 20% $31.80
 
-ig POO enn ed ee eee eee eh en eee een eee reese eee e ees aeOeedsOeeOEOEOEEEEEOEC CE EEE DONEC OEOREEEEHEEEEEEOLECEEEE ECOL EOEEEEEEOEEENEEEEEEEESEEEED EDLC EEO EN ES EREOESEDEEEHEOEEEE CCE SEOEEEE TOO C OES
+iJ
 
-| @) Smoked Chat 66% Cacao 4 $7.95 20% $31.80
+G TOTAL $192.90 USD
 
-If
+i VAT 20% $38.58 USD ———
 
-i TOTAL $192.90 USD
+| TOTAL INCL. VAT [ encousp |
 
-f= LLR—$L
+| NN
 
-VAT 20% $38.58 USD ———
+: Notes
+
+i Aqnimt, tes at ot exces aflitibus qui comnit, ul essum
+nobis miltandt nis enthill atenimt nciumaquatas ne
+
+. consondus re nullent ea di officium ut-invollaut
+
+o quam solectaturem at quibus ca duciur
+
+. Lorem Ipsum
+
+Thank yout ceseeesessccesecccscenenssasseesssssessssssscscssssscsnuansansssneseeees
+
+H Agnimi, tes et et exces sitaulbus qui comnityv ules-
+
+i stim nobis millands nis enihill atonimi netumaquatas. View this invoice online at
+
+it HUps// www. lorem Ipsum. com/xxxxxxxxxx
 
 i
 
-fi Notes
+l emailacompany.com +1 (09) 636-48018 Created in Sufio
 
-j Agnimi, tes et et exces allalfbus qui comnit, ut essum
-
-I nobis milland! nis enihill atenimi nciumquatas ne
-
-| consondus re nullent ea di officium ut invollaut
-quam solectaturem et quibus ca duciur.
+i Iwittor Qacme lacebook Gacme tnatagram oacme
 
 f
 
-Lorem Ipsum
+it
 
-ti
-
-a Thank you!
-
-P Agnimi, tes et et exces sitatlbus qui comnit,v ul es-
-
-f sum nobis millandi nis anthill atenim: netumquatas. View this invoice online at
-
-hUp://www. lorem ips com /xxxxxxxxxx
-
-| emalltacompany.com +1 (89) 636-48018 Created in Sufio
-
-| Wwalttor dacme tneabook ascme Inatagram Gacme
-
-a  ,
-
-J
+3

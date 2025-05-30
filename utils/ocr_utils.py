@@ -60,7 +60,7 @@ def extract_text_from_images():
             with open(text_filename, "w", encoding="utf-8") as f:
                 f.write(extracted_text.strip())
 
-            print(f"✅ Extracted text saved: {text_filename}")
+            print(f"Extracted text saved: {text_filename}")
 
 # Example execution
 if __name__ == "__main__":

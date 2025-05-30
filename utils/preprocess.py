@@ -35,7 +35,7 @@ def convert_pdf_to_images(input_dir):
             try:
                 pages = convert_from_path(pdf_path, dpi=300, poppler_path=POPPLER_PATH)
             except Exception as e:
-                print(f"❌ Error converting {filename}: {e}")
+                print(f"Error converting {filename}: {e}")
                 continue
 
             for page_num, page in enumerate(pages):
@@ -61,20 +61,28 @@ def convert_pdf_to_images(input_dir):
 
 def preprocess_image(image):
     """
-    Apply grayscale + denoise + adaptive thresholding.
+    Apply grayscale, sharpening, denoise, adaptive thresholding, and morphological transformations.
     """
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-    # Additional sharpening for better OCR results
+    # Apply sharpening to enhance text edges
     kernel = np.array([[0, -1, 0], [-1, 5, -1], [0, -1, 0]])
     sharpened = cv2.filter2D(gray, -1, kernel)
 
-    denoised = cv2.fastNlMeansDenoising(sharpened, h=30)
+    # Stronger denoising
+    denoised = cv2.fastNlMeansDenoising(sharpened, h=40)  
+
+    # Adaptive threshold for better text separation
     thresh = cv2.adaptiveThreshold(
         denoised, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
         cv2.THRESH_BINARY, 11, 2
     )
-    return thresh
+
+    # Morphological opening to remove small artifacts
+    kernel = np.ones((2,2), np.uint8)
+    morph = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel)
+
+    return morph
 
 # Example execution (if needed)
 if __name__ == "__main__":

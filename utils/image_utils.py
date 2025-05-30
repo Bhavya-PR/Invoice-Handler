@@ -28,7 +28,7 @@ def detect_seal_signature(image_path):
         cropped_seal = image[y1:y2, x1:x2]
         seal_path = os.path.join(SEAL_SIGNATURE_FOLDER, invoice_filename)  # Save as original invoice filename
         cv2.imwrite(seal_path, cropped_seal)
-        print(f"✅ Saved seal/signature as {seal_path}")  # Debugging output
+        print(f"Saved seal/signature as {seal_path}")  # Debugging output
 
 def process_images_for_seals():
     """Scans all original images and applies YOLO seal detection."""

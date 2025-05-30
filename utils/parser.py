@@ -44,17 +44,17 @@ def check_seal_signature(image_filename):
     """Check if a seal/signature is detected for this specific invoice."""
     if os.path.exists(SEAL_SIGNATURE_FOLDER):
         seal_images = os.listdir(SEAL_SIGNATURE_FOLDER)
-        print(f"📂 Debug: Seal Images Found - {seal_images}")  # Show stored seals
+        print(f"Debug: Seal Images Found - {seal_images}")  # Show stored seals
 
         # Remove unwanted suffix from image_filename before checking
         expected_seal_name = image_filename.replace("_processed.jpg", "_original.jpg")  # Fix processed naming
         expected_seal_name = expected_seal_name.replace(".pdf_page_1_original.jpg", "") + ".pdf_page_1_original.jpg"  # Ensure correct match
 
         matching_seals = [f for f in seal_images if f == expected_seal_name]
-        print(f"🔍 Checking {expected_seal_name}: Found {len(matching_seals)} matching seals")  # Debugging output
+        print(f"Checking {expected_seal_name}: Found {len(matching_seals)} matching seals")  # Debugging output
 
         return len(matching_seals) > 0  # Returns True if exact filename exists
-    print(f"❌ No seal detected for {image_filename}")
+    print(f"No seal detected for {image_filename}")
     return False
 
 
@@ -76,10 +76,10 @@ You are an expert at parsing invoice documents. Extract structured data from the
 - items: [{{serial_number, description, hsn_sac, quantity, unit_price, total_amount}}]
 
 ### **Important Instructions**
-1️⃣ **Ensure ALL items are correctly extracted**—even if the text is unclear.
-2️⃣ **If an item row is broken, intelligently infer missing values.**
-3️⃣ **Verify unit prices match quantities properly to prevent mismatches.**
-4️⃣ **Respond ONLY with valid JSON—no extra commentary.**
+1**Ensure ALL items are correctly extracted**—even if the text is unclear.
+2**If an item row is broken, intelligently infer missing values.**
+3**Verify unit prices match quantities properly to prevent mismatches.**
+4**Respond ONLY with valid JSON—no extra commentary.**
 
 ### **OCR Data for Parsing**
 {ocr_text}

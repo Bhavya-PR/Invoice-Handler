@@ -46,7 +46,7 @@ def generate_verifiability_report():
     ensure_folder_exists("output")
 
     if not os.path.exists(EXTRACTED_DATA_FILE):
-        print(f"❌ Error: `{EXTRACTED_DATA_FILE}` not found!")
+        print(f"Error: `{EXTRACTED_DATA_FILE}` not found!")
         return
     
     with open(EXTRACTED_DATA_FILE, "r", encoding="utf-8") as f:
@@ -121,7 +121,7 @@ def generate_verifiability_report():
     with open(VERIFIABILITY_REPORT_FILE, "w", encoding="utf-8") as f:
         json.dump(report_data, f, indent=4)
 
-    print(f"✅ Verifiability Report saved: {VERIFIABILITY_REPORT_FILE}")
+    print(f"Verifiability Report saved: {VERIFIABILITY_REPORT_FILE}")
 
 # Execute validator
 if __name__ == "__main__":
