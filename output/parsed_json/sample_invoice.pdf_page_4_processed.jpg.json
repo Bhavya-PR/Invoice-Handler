@@ -1,3 +1,4 @@
 {
-    "error": "OCR text is too empty or unclear to parse."
+    "error": "OCR text is too empty or unclear to parse.",
+    "seal_and_sign_present": false
 }
