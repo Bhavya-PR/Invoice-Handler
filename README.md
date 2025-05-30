@@ -1,4 +1,4 @@
-# 📄 Yavar.AI Hackathon – Invoice Extraction & Verification System
+# Yavar.AI Hackathon – Invoice Extraction & Verification System
 
 An AI-Powered Invoice Processing System designed for automated, accurate, and scalable financial document handling. It uses **OCR**, **Computer Vision**, and **LLM-based parsing** to extract, validate, and structure invoice data from scanned PDFs into **JSON** and **Excel reports**, with intelligent verification using **seal/signature detection** and **missing detail inference**.
 
@@ -6,7 +6,7 @@ An AI-Powered Invoice Processing System designed for automated, accurate, and sc
 
 ---
 
-## 🚀 Overview
+## Overview
 
 This system performs the following:
 - Converts **PDFs to images**
@@ -19,7 +19,7 @@ This system performs the following:
 
 ---
 
-## 🛠 Technologies Used
+## Technologies Used
 
 | Technology                 | Description                                           |
 |----------------------------|-------------------------------------------------------|
@@ -37,26 +37,26 @@ This system performs the following:
 
 ---
 
-## 🔧 Preprocessing Steps for OCR Optimization
+## Preprocessing Steps for OCR Optimization
 
-- 🎨 **Grayscale conversion** to eliminate background noise
-- 🖤 **Adaptive thresholding** to improve text contrast
-- 🌪 **Denoising** using Gaussian & Non-Local Means (NLM)
-- 🛠 **Morphological operations** to clean broken characters
-- 🧾 **Regex formatting** for standardizing invoice content
-
----
-
-## 🧠 LLM Parsing & Optimization
-
-- 🧠 Engineered prompts to guide **Groq’s Llama3** for clean structured output
-- 🧪 Confidence scoring to evaluate data reliability
-- ⚙️ Refined invoice field extraction using pattern rules
-- 🔍 Corrects missing or unclear data intelligently
+-  **Grayscale conversion** to eliminate background noise
+-  **Adaptive thresholding** to improve text contrast
+-  **Denoising** using Gaussian & Non-Local Means (NLM)
+-  **Morphological operations** to clean broken characters
+-  **Regex formatting** for standardizing invoice content
 
 ---
 
-## 📈 Fine-Tuning Summary
+## LLM Parsing & Optimization
+
+-  Engineered prompts to guide **Groq’s Llama3** for clean structured output
+-  Confidence scoring to evaluate data reliability
+-  Refined invoice field extraction using pattern rules
+-  Corrects missing or unclear data intelligently
+
+---
+
+##  Fine-Tuning Summary
 
 | Component         | Optimization Done                                  |
 |------------------|-----------------------------------------------------|
@@ -67,32 +67,32 @@ This system performs the following:
 
 ---
 
-## 📁 File Structure
+##  File Structure
 
 ![File Structure](file_structure.png)
 
 ---
 
-## 📂 Project Workflow – Step-by-Step
+##  Project Workflow – Step-by-Step
 
-### 🔹 1️⃣ PDF-to-Image Conversion (`preprocess.py`)
+### 1️. PDF-to-Image Conversion (`preprocess.py`)
 ✔ Converts PDF invoices to images using **Poppler**  
 ✔ Prepares images for better OCR accuracy (resolution enhancement, format conversion)
 
-### 🔹 2️⃣ Image Preprocessing for OCR (`preprocess.py`)
+### 2️. Image Preprocessing for OCR (`preprocess.py`)
 ✔ Grayscale conversion to remove noise  
 ✔ Adaptive thresholding to enhance contrast  
 ✔ Denoising & sharpening for clearer text extraction
 
-### 🔹 3️⃣ Extract Text Using OCR (`ocr_utils.py`)
+### 3️. Extract Text Using OCR (`ocr_utils.py`)
 ✔ Runs **Tesseract OCR** to extract text from processed images  
 ✔ Cleans extracted text for better alignment & formatting
 
-### 🔹 4️⃣ Detect Seals & Signatures (`image_utils.py`)
+### 4️. Detect Seals & Signatures (`image_utils.py`)
 ✔ Uses **YOLOv8** to identify official seals/signatures  
 ✔ Saves detection results in `output/seal_signatures/`
 
-### 🔹 5️⃣ AI-Powered Text Parsing (`parser.py`)
+### 5️. AI-Powered Text Parsing (`parser.py`)
 ✔ Uses **Groq's Llama3 (LLM)** to structure messy OCR output into JSON format  
 ✔ Ensures proper extraction of fields like:
 - Invoice number
@@ -100,16 +100,16 @@ This system performs the following:
 - GST details
 - Item descriptions, etc.,
 
-### 🔹 6️⃣ Confidence Scoring & Validation (`validator.py`)
+### 6️. Confidence Scoring & Validation (`validator.py`)
 ✔ Assigns a confidence score to extracted invoice fields  
 ✔ Flags missing or uncertain data for further review  
 ✔ Generates `output/extracted_data.json` containing validated invoice details
 
-### 🔹 7️⃣ Generate Excel Report (`convert_to_excel.py`)
+### 7️. Generate Excel Report (`convert_to_excel.py`)
 ✔ Converts extracted JSON invoice data into structured Excel format  
 ✔ Saves reports to `output/extracted_data.xlsx`
 
-### 🔹 8️⃣ Final Output & Storage
+### 8️. Final Output & Storage
 ✔ All processed data stored in:
 - `output/extracted_text/` → OCR-extracted text  
 - `output/parsed_json/` → Structured JSON  
@@ -119,9 +119,9 @@ This system performs the following:
 
 ---
 
-## 🧪 How to Run the Project
+##  How to Run the Project
 
-### 1️⃣ Clone the Repository
+### 1️) Clone the Repository
 
 ```bash
 git clone https://github.com/Bhavya-PR/Yavar.AI-Hackathon-Invoice-Handler
@@ -130,7 +130,7 @@ cd invoice-processing-system
 
 ---
 
-### 2️⃣ Install Python Dependencies
+### 2️) Install Python Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -138,9 +138,9 @@ pip install -r requirements.txt
 
 ---
 
-### 3️⃣ Install & Configure Tesseract OCR
+### 3️) Install & Configure Tesseract OCR
 
-📥 [Download Tesseract for Windows](https://github.com/tesseract-ocr/tesseract)
+ [Download Tesseract for Windows](https://github.com/tesseract-ocr/tesseract)
 
 Default install path:
 ```bash
@@ -155,9 +155,9 @@ pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tessera
 
 ---
 
-### 4️⃣ Install & Configure Poppler
+### 4️) Install & Configure Poppler
 
-📥 [Download Poppler for Windows](http://blog.alivate.com.au/poppler-windows/)
+ [Download Poppler for Windows](http://blog.alivate.com.au/poppler-windows/)
 
 Extract and move to:
 ```bash
@@ -173,7 +173,7 @@ pages = convert_from_path(pdf_path, dpi=300, poppler_path=POPPLER_PATH)
 
 ---
 
-### 5️⃣ Run the Project
+### 5️) Run the Project
 
 ```bash
 python main.py
@@ -181,10 +181,10 @@ python main.py
 
 ---
 
-## 🎥 Demo Video
+##  Demo Video
 
 🔗 [Click here to view the demo](https://drive.google.com/drive/folders/11QP1McS6u0orVLN1PsFPv4WMIqK5LtCI?usp=sharing)
 
-> 🎥 *Ensure HD quality for the best viewing experience.*
+>  *Ensure HD quality for the best viewing experience.*
 
 ---
