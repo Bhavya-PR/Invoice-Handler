@@ -36,7 +36,7 @@ An Automated Invoice Processing System utilizes **OCR (Tesseract)** and **YOLOv8
 pip install -r requirements.txt
 ```
 ## 1️⃣ Install & Configure Tesseract OCR
-** 📥 Download & Install Tesseract **
+**📥 Download & Install Tesseract**
 Download the latest version from: Tesseract-OCR for Windows
 
 Install it to the default directory:
@@ -50,7 +50,7 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 ```
 ## 2️⃣ Install & Configure Poppler for Windows
-** 📥 Download & Install Poppler **
+**📥 Download & Install Poppler**
 Download Poppler from: Poppler for Windows
 
 Extract the Poppler ZIP and move it to:
