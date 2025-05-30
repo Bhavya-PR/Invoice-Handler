@@ -1,4 +1,3 @@
-
 # 📄 Yavar.AI Hackathon – Invoice Extraction & Verification System
 
 An AI-Powered Invoice Processing System designed for automated, accurate, and scalable financial document handling. It uses **OCR**, **Computer Vision**, and **LLM-based parsing** to extract, validate, and structure invoice data from scanned PDFs into **JSON** and **Excel reports**, with intelligent verification using **seal/signature detection** and **missing detail inference**.
@@ -71,6 +70,52 @@ This system performs the following:
 ## 📁 File Structure
 
 ![File Structure](file_structure.png)
+
+---
+
+## 📂 Project Workflow – Step-by-Step
+
+### 🔹 1️⃣ PDF-to-Image Conversion (`preprocess.py`)
+✔ Converts PDF invoices to images using **Poppler**  
+✔ Prepares images for better OCR accuracy (resolution enhancement, format conversion)
+
+### 🔹 2️⃣ Image Preprocessing for OCR (`preprocess.py`)
+✔ Grayscale conversion to remove noise  
+✔ Adaptive thresholding to enhance contrast  
+✔ Denoising & sharpening for clearer text extraction
+
+### 🔹 3️⃣ Extract Text Using OCR (`ocr_utils.py`)
+✔ Runs **Tesseract OCR** to extract text from processed images  
+✔ Cleans extracted text for better alignment & formatting
+
+### 🔹 4️⃣ Detect Seals & Signatures (`image_utils.py`)
+✔ Uses **YOLOv8** to identify official seals/signatures  
+✔ Saves detection results in `output/seal_signatures/`
+
+### 🔹 5️⃣ AI-Powered Text Parsing (`parser.py`)
+✔ Uses **Groq's Llama3 (LLM)** to structure messy OCR output into JSON format  
+✔ Ensures proper extraction of fields like:
+- Invoice number
+- Date
+- GST details
+- Item descriptions
+
+### 🔹 6️⃣ Confidence Scoring & Validation (`validator.py`)
+✔ Assigns a confidence score to extracted invoice fields  
+✔ Flags missing or uncertain data for further review  
+✔ Generates `output/extracted_data.json` containing validated invoice details
+
+### 🔹 7️⃣ Generate Excel Report (`convert_to_excel.py`)
+✔ Converts extracted JSON invoice data into structured Excel format  
+✔ Saves reports to `output/invoice_data.xlsx`
+
+### 🔹 8️⃣ Final Output & Storage
+✔ All processed data stored in:
+- `output/extracted_text/` → OCR-extracted text  
+- `output/parsed_json/` → Structured JSON  
+- `output/extracted_data.json` → Aggregated invoice details  
+- `output/invoice_data.xlsx` → Final structured report  
+- `output/verifiability_report.json` → Confidence scoring
 
 ---
 
