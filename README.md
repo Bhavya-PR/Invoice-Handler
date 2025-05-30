@@ -34,3 +34,16 @@ An Automated Invoice Processing System utilizes **OCR (Tesseract)** and **YOLOv8
 ## 🔧 Installation Guide
 ```bash
 pip install -r requirements.txt
+
+## 1️⃣ Install & Configure Tesseract OCR
+** 📥 Download & Install Tesseract **
+Download the latest version from: Tesseract-OCR for Windows
+
+Install it to the default directory:
+```bash
+C:\Program Files\Tesseract-OCR\
+## 🔧 Configure Tesseract in Your Project
+After installation, set the Tesseract path directly in your code (as you've already done):
+```bash
+import pytesseract
+pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
