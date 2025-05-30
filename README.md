@@ -97,3 +97,36 @@ pages = convert_from_path(pdf_path, dpi=300, poppler_path=POPPLER_PATH)
 ```bash
 python main.py
 ```
+
+## File Structure
+Yavar.AI-Hackathon-Invoice-Handler/
+│
+├── input/                      
+│   └── sample_invoice.pdf
+│
+├── output/                      
+│   ├── extracted_text/           
+│   ├── images/                  
+│   │   ├── original/              
+│   │   └── processed/            
+│   ├── parsed_json/              
+│   ├── seal_signatures/          
+│   ├── extracted_data.json       
+│   ├── invoice_data.xlsx         
+│   └── verifiability_report.json 
+│
+├── yolov8n.pt
+│
+├── utils/                        
+│   ├── preprocess.py             
+│   ├── ocr_utils.py              
+│   ├── image_utils.py            
+│   ├── parser.py                 
+│   ├── validator.py              
+│   ├── convert_to_excel.py       
+│   └── __init__.py              
+│
+├── .env                          
+├── README.md                     
+├── requirements.txt                                    
+└── main.py 
