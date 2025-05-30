@@ -3,7 +3,7 @@
 # Invoice Extraction & Verification System
 ## 🚀 Overview
 An Automated Invoice Processing System utilizes **OCR (Tesseract)** and **YOLOv8** to extract, validate, and process invoice data efficiently. It converts PDFs into structured **JSON and Excel reports**, ensuring accurate financial document handling while detecting seals/signatures for verification. Additionally, **Groq's Llama3 model** enhances text parsing, intelligently correcting and inferring missing invoice details.
-
+![alt text](<WhatsApp Image 2025-05-30 at 17.14.22_626dc0c3.jpg>)
 ## 🛠 Technologies Used
 - **Python** → Main programming language for processing
 
