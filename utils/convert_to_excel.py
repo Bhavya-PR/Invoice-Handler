@@ -42,4 +42,4 @@ def json_to_excel():
     print(f"Structured invoice data saved as {EXCEL_OUTPUT_FILE}")
 
 if __name__ == "__main__":
-    json_to_excel
+    json_to_excel()
