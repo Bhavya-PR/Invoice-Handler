@@ -1,44 +1,45 @@
 [
     {
-        "invoice_number": "IATIEN1819013538",
-        "supplier_gst_number": "29AFCA0924K1Z2N",
-        "bill_to_gst_number": "294AFCA0924K12N",
-        "po_number": "JC-AtiCar-BP1-1819-012923",
-        "seal_and_sign_present": false,
-        "no_items": 1,
+        "invoice_number": "IATIEN1819013533",
+        "invoice_date": "15-02-2013",
+        "supplier_gst_number": "20AAHCS6672E12Z",
+        "bill_to_gst_number": "29AAFCA0924K1ZN",
+        "po_number": "JC-AliCar-BP1-1819-012923",
+        "shipping_address": "WORKFELLA BUSINESS CENTRE , 4150/1, INFANTRY ROAD , OPP COMMISSIONER OFFICE , VASANTH NAGAR B Anekahalli, BENGALURU 560001",
+        "seal_and_sign_present": true,
+        "no_items": 2,
         "items": [
             {
-                "serial_number": "MAT629301HKF42433",
-                "description": "TIGOR",
-                "hsn_sac": "1-150HDXNS",
+                "serial_number": "998714",
+                "description": "FRONT WHEEL ALIGNMENT",
+                "hsn_sac": "",
                 "quantity": 1,
-                "unit_price": 1200.0,
-                "total_amount": 1200.0
+                "unit_price": 5200,
+                "total_amount": 5200
+            },
+            {
+                "serial_number": "998714",
+                "description": "BEARING ACUUMIN PAID",
+                "hsn_sac": "",
+                "quantity": 1,
+                "unit_price": 600,
+                "total_amount": 600
             }
-        ],
-        "shipping_address": "150/1, INFANTRY ROAD, OPP COMMISSIONER OFFICE, VASANTH NAGAR, BENGALURU - 560051"
+        ]
     },
     {
-        "invoice_number": "647-444-1234",
-        "invoice_date": "10/07/14",
-        "supplier_gst_number": "000000",
+        "invoice_number": "000000",
+        "invoice_date": "07-07-2014",
+        "supplier_gst_number": "",
         "bill_to_gst_number": "",
         "po_number": "",
-        "shipping_address": "City, State, Country ZIP CODE",
+        "shipping_address": "ClientAddress, City, State, Country ZIP CODE",
         "seal_and_sign_present": false,
-        "no_items": 4,
+        "no_items": 5,
         "items": [
             {
                 "serial_number": "",
-                "description": "description goes here",
-                "hs_sac": "",
-                "quantity": 1,
-                "unit_price": 1000,
-                "total_amount": 1000
-            },
-            {
-                "serial_number": "",
-                "description": "description goes here",
+                "description": "Item description goes here",
                 "hsn_sac": "",
                 "quantity": 1,
                 "unit_price": 1000,
@@ -46,7 +47,7 @@
             },
             {
                 "serial_number": "",
-                "description": "description goes here",
+                "description": "Item description goes here",
                 "hsn_sac": "",
                 "quantity": 1,
                 "unit_price": 1000,
@@ -54,7 +55,23 @@
             },
             {
                 "serial_number": "",
-                "description": "description goes here",
+                "description": "Item description goes here",
+                "hsn_sac": "",
+                "quantity": 1,
+                "unit_price": 1000,
+                "total_amount": 1000
+            },
+            {
+                "serial_number": "",
+                "description": "Item description goes here",
+                "hsn_sac": "",
+                "quantity": 1,
+                "unit_price": 1000,
+                "total_amount": 1000
+            },
+            {
+                "serial_number": "",
+                "description": "Item description goes here",
                 "hsn_sac": "",
                 "quantity": 1,
                 "unit_price": 1000,
@@ -63,51 +80,51 @@
         ]
     },
     {
-        "invoice_number": "12345",
-        "invoice_date": "2016-11-09",
-        "supplier_gst_number": "GB202205019",
+        "invoice_number": "2016-10014",
+        "invoice_date": "09-11-2016",
+        "supplier_gst_number": "GB202208019",
         "bill_to_gst_number": "FR90103402210",
         "po_number": "581660",
-        "shipping_address": "185 Portbello Rd, London W11 1LA, United Kingdom",
+        "shipping_address": "4 185 Portbello Rd, London W11 1LA, United Kingdom",
         "seal_and_sign_present": false,
         "no_items": 5,
         "items": [
             {
-                "serial_number": "",
-                "description": "Best of First Nibs 67% Cacao",
-                "hsn_sac": "20%",
+                "serial_number": 1,
+                "description": "Bestot First Nibs 67 Cacao",
+                "hsn_sac": "",
                 "quantity": 7,
                 "unit_price": 9.95,
                 "total_amount": 69.65
             },
             {
-                "serial_number": "",
-                "description": "Pink Sea Salt 71% Cacao",
-                "hsn_sac": "20%",
+                "serial_number": 2,
+                "description": "Pink Sea salt 71 Cacao",
+                "hsn_sac": "",
                 "quantity": 3,
                 "unit_price": 7.95,
                 "total_amount": 23.85
             },
             {
-                "serial_number": "",
-                "description": "Maple and Nibs 75% Cacao",
-                "hsn_sac": "20%",
+                "serial_number": 3,
+                "description": "Maple and Nibs 75 Cacao",
+                "hsn_sac": "",
                 "quantity": 2,
                 "unit_price": 6.95,
-                "total_amount": 13.9
+                "total_amount": 13.99
             },
             {
-                "serial_number": "",
-                "description": "Coconut Milk 60% Cacao",
-                "hsn_sac": "20%",
+                "serial_number": 4,
+                "description": "coconut Mitk 60 Cacao",
+                "hsn_sac": "",
                 "quantity": 6,
                 "unit_price": 8.95,
                 "total_amount": 53.7
             },
             {
-                "serial_number": "",
-                "description": "Smoked Chai 66% Cacao",
-                "hsn_sac": "20%",
+                "serial_number": 5,
+                "description": "Smoked Chat 66 Cacao",
+                "hsn_sac": "",
                 "quantity": 4,
                 "unit_price": 7.95,
                 "total_amount": 31.8
@@ -115,6 +132,6 @@
         ]
     },
     {
-        "error": "OCR result is too empty or unclear to parse."
+        "error": "OCR text is too empty or unclear to parse."
     }
 ]

@@ -39,6 +39,14 @@
             "quantity": 1,
             "unit_price": 1000,
             "total_amount": 1000
+        },
+        {
+            "serial_number": "",
+            "description": "Item description goes here",
+            "hsn_sac": "",
+            "quantity": 1,
+            "unit_price": 1000,
+            "total_amount": 1000
         }
     ]
 }

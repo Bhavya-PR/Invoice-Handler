@@ -3,9 +3,9 @@
     "invoice_date": "15-02-2013",
     "supplier_gst_number": "20AAHCS6672E12Z",
     "bill_to_gst_number": "29AAFCA0924K1ZN",
-    "po_number": "",
-    "shipping_address": "WORKFELLA BUSINESS CENTRE , 4150/1, INFANTRY ROAD , OPP COMMISSIONER OFFICE , VASANTH NAGAR BENGALURU 560001",
-    "seal_and_sign_present": false,
+    "po_number": "JC-AliCar-BP1-1819-012923",
+    "shipping_address": "WORKFELLA BUSINESS CENTRE , 4150/1, INFANTRY ROAD , OPP COMMISSIONER OFFICE , VASANTH NAGAR B Anekahalli, BENGALURU 560001",
+    "seal_and_sign_present": true,
     "no_items": 2,
     "items": [
         {
@@ -18,7 +18,7 @@
         },
         {
             "serial_number": "998714",
-            "description": "VACUUMIN PAID",
+            "description": "BEARING ACUUMIN PAID",
             "hsn_sac": "",
             "quantity": 1,
             "unit_price": 600,
