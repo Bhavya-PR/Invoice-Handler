@@ -1,0 +1,19 @@
+{
+    "invoice_number": "IATIEN1819013538",
+    "supplier_gst_number": "29AFCA0924K1Z2N",
+    "bill_to_gst_number": "294AFCA0924K12N",
+    "po_number": "JC-AtiCar-BP1-1819-012923",
+    "seal_and_sign_present": false,
+    "no_items": 1,
+    "items": [
+        {
+            "serial_number": "MAT629301HKF42433",
+            "description": "TIGOR",
+            "hsn_sac": "1-150HDXNS",
+            "quantity": 1,
+            "unit_price": 1200.0,
+            "total_amount": 1200.0
+        }
+    ],
+    "shipping_address": "150/1, INFANTRY ROAD, OPP COMMISSIONER OFFICE, VASANTH NAGAR, BENGALURU - 560051"
+}
