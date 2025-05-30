@@ -98,7 +98,7 @@ This system performs the following:
 - Invoice number
 - Date
 - GST details
-- Item descriptions
+- Item descriptions, etc.,
 
 ### 🔹 6️⃣ Confidence Scoring & Validation (`validator.py`)
 ✔ Assigns a confidence score to extracted invoice fields  
@@ -107,14 +107,14 @@ This system performs the following:
 
 ### 🔹 7️⃣ Generate Excel Report (`convert_to_excel.py`)
 ✔ Converts extracted JSON invoice data into structured Excel format  
-✔ Saves reports to `output/invoice_data.xlsx`
+✔ Saves reports to `output/extracted_data.xlsx`
 
 ### 🔹 8️⃣ Final Output & Storage
 ✔ All processed data stored in:
 - `output/extracted_text/` → OCR-extracted text  
 - `output/parsed_json/` → Structured JSON  
 - `output/extracted_data.json` → Aggregated invoice details  
-- `output/invoice_data.xlsx` → Final structured report  
+- `output/extracted_data.xlsx` → Final structured report  
 - `output/verifiability_report.json` → Confidence scoring
 
 ---
