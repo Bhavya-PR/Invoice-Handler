@@ -70,20 +70,6 @@ This system performs the following:
 
 ## 📁 File Structure
 
-```
-invoice_extractor/
-├── input/                  # Input PDF files
-├── output/                 # JSON/Excel output
-├── utils/                  
-│   ├── ocr_utils.py        # OCR and preprocessing logic
-│   ├── parser.py           # LLM-based text parsing
-│   ├── validator.py        # Field validation & confidence scores
-│   ├── exporter.py         # Export to Excel
-├── main.py                 # Entry point
-├── requirements.txt        # Dependencies
-└── README.md               # Project documentation
-```
-
 ![File Structure](file_structure.png)
 
 ---
@@ -96,6 +82,8 @@ invoice_extractor/
 git clone https://github.com/Bhavya-PR/Yavar.AI-Hackathon-Invoice-Handler
 cd invoice-processing-system
 ```
+
+---
 
 ### 2️⃣ Install Python Dependencies
 
@@ -155,17 +143,3 @@ python main.py
 > 🎥 *Ensure HD quality for the best viewing experience.*
 
 ---
-
-## 🤝 Contributing
-
-If you'd like to improve or extend the system, feel free to fork, make changes, and open a pull request!
-
----
-
-## 📩 Contact
-
-For any questions or feedback, reach out via GitHub or email 📬.
-
----
-
-> ⚡ Powered by AI, Automation & Creativity – Built with ❤️ for the Yavar.AI Hackathon
