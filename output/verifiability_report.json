@@ -1,0 +1,355 @@
+{
+    "field_verification": {
+        "IATIEN1819013533": {
+            "invoice_number": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "invoice_date": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "supplier_gst_number": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "bill_to_gst_number": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "po_number": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "shipping_address": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "seal_and_sign_present": {
+                "confidence": 0.8,
+                "present": true
+            }
+        },
+        "000000": {
+            "invoice_number": {
+                "confidence": 0.8,
+                "present": true
+            },
+            "invoice_date": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "supplier_gst_number": {
+                "confidence": 0.5,
+                "present": false
+            },
+            "bill_to_gst_number": {
+                "confidence": 0.5,
+                "present": false
+            },
+            "po_number": {
+                "confidence": 0.5,
+                "present": false
+            },
+            "shipping_address": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "seal_and_sign_present": {
+                "confidence": 0.5,
+                "present": false
+            }
+        },
+        "2016-10014": {
+            "invoice_number": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "invoice_date": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "supplier_gst_number": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "bill_to_gst_number": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "po_number": {
+                "confidence": 0.8,
+                "present": true
+            },
+            "shipping_address": {
+                "confidence": 0.99,
+                "present": true
+            },
+            "seal_and_sign_present": {
+                "confidence": 0.5,
+                "present": false
+            }
+        }
+    },
+    "line_items_verification": {
+        "IATIEN1819013533": [
+            {
+                "row": 1,
+                "description_confidence": 0.99,
+                "hsn_sac_confidence": 0.5,
+                "quantity_confidence": 0.55,
+                "unit_price_confidence": 0.7,
+                "total_amount_confidence": 0.7,
+                "serial_number_confidence": 0.8,
+                "line_total_check": {
+                    "calculated_value": 5200,
+                    "extracted_value": 5200,
+                    "check_passed": true
+                }
+            },
+            {
+                "row": 2,
+                "description_confidence": 0.99,
+                "hsn_sac_confidence": 0.5,
+                "quantity_confidence": 0.55,
+                "unit_price_confidence": 0.65,
+                "total_amount_confidence": 0.65,
+                "serial_number_confidence": 0.8,
+                "line_total_check": {
+                    "calculated_value": 600,
+                    "extracted_value": 600,
+                    "check_passed": true
+                }
+            }
+        ],
+        "000000": [
+            {
+                "row": 1,
+                "description_confidence": 0.99,
+                "hsn_sac_confidence": 0.5,
+                "quantity_confidence": 0.55,
+                "unit_price_confidence": 0.7,
+                "total_amount_confidence": 0.7,
+                "serial_number_confidence": 0.5,
+                "line_total_check": {
+                    "calculated_value": 1000,
+                    "extracted_value": 1000,
+                    "check_passed": true
+                }
+            },
+            {
+                "row": 2,
+                "description_confidence": 0.99,
+                "hsn_sac_confidence": 0.5,
+                "quantity_confidence": 0.55,
+                "unit_price_confidence": 0.7,
+                "total_amount_confidence": 0.7,
+                "serial_number_confidence": 0.5,
+                "line_total_check": {
+                    "calculated_value": 1000,
+                    "extracted_value": 1000,
+                    "check_passed": true
+                }
+            },
+            {
+                "row": 3,
+                "description_confidence": 0.99,
+                "hsn_sac_confidence": 0.5,
+                "quantity_confidence": 0.55,
+                "unit_price_confidence": 0.7,
+                "total_amount_confidence": 0.7,
+                "serial_number_confidence": 0.5,
+                "line_total_check": {
+                    "calculated_value": 1000,
+                    "extracted_value": 1000,
+                    "check_passed": true
+                }
+            },
+            {
+                "row": 4,
+                "description_confidence": 0.99,
+                "hsn_sac_confidence": 0.5,
+                "quantity_confidence": 0.55,
+                "unit_price_confidence": 0.7,
+                "total_amount_confidence": 0.7,
+                "serial_number_confidence": 0.5,
+                "line_total_check": {
+                    "calculated_value": 1000,
+                    "extracted_value": 1000,
+                    "check_passed": true
+                }
+            },
+            {
+                "row": 5,
+                "description_confidence": 0.99,
+                "hsn_sac_confidence": 0.5,
+                "quantity_confidence": 0.55,
+                "unit_price_confidence": 0.7,
+                "total_amount_confidence": 0.7,
+                "serial_number_confidence": 0.5,
+                "line_total_check": {
+                    "calculated_value": 1000,
+                    "extracted_value": 1000,
+                    "check_passed": true
+                }
+            }
+        ],
+        "2016-10014": [
+            {
+                "row": 1,
+                "description_confidence": 0.99,
+                "hsn_sac_confidence": 0.5,
+                "quantity_confidence": 0.55,
+                "unit_price_confidence": 0.7,
+                "total_amount_confidence": 0.75,
+                "serial_number_confidence": 0.55,
+                "line_total_check": {
+                    "calculated_value": 69.65,
+                    "extracted_value": 69.65,
+                    "check_passed": true
+                }
+            },
+            {
+                "row": 2,
+                "description_confidence": 0.99,
+                "hsn_sac_confidence": 0.5,
+                "quantity_confidence": 0.55,
+                "unit_price_confidence": 0.7,
+                "total_amount_confidence": 0.75,
+                "serial_number_confidence": 0.55,
+                "line_total_check": {
+                    "calculated_value": 23.85,
+                    "extracted_value": 23.85,
+                    "check_passed": true
+                }
+            },
+            {
+                "row": 3,
+                "description_confidence": 0.99,
+                "hsn_sac_confidence": 0.5,
+                "quantity_confidence": 0.55,
+                "unit_price_confidence": 0.7,
+                "total_amount_confidence": 0.75,
+                "serial_number_confidence": 0.55,
+                "line_total_check": {
+                    "calculated_value": 13.9,
+                    "extracted_value": 13.99,
+                    "check_passed": false
+                }
+            },
+            {
+                "row": 4,
+                "description_confidence": 0.99,
+                "hsn_sac_confidence": 0.5,
+                "quantity_confidence": 0.55,
+                "unit_price_confidence": 0.7,
+                "total_amount_confidence": 0.7,
+                "serial_number_confidence": 0.55,
+                "line_total_check": {
+                    "calculated_value": 53.7,
+                    "extracted_value": 53.7,
+                    "check_passed": true
+                }
+            },
+            {
+                "row": 5,
+                "description_confidence": 0.99,
+                "hsn_sac_confidence": 0.5,
+                "quantity_confidence": 0.55,
+                "unit_price_confidence": 0.7,
+                "total_amount_confidence": 0.7,
+                "serial_number_confidence": 0.55,
+                "line_total_check": {
+                    "calculated_value": 31.8,
+                    "extracted_value": 31.8,
+                    "check_passed": true
+                }
+            }
+        ]
+    },
+    "total_calculations_verification": {
+        "IATIEN1819013533": {
+            "subtotal_check": {
+                "calculated_value": 5800,
+                "extracted_value": 5800,
+                "check_passed": true
+            },
+            "discount_check": {
+                "calculated_value": 0,
+                "extracted_value": 0,
+                "check_passed": true
+            },
+            "gst_check": {
+                "calculated_value": 1044.0,
+                "extracted_value": 1044.0,
+                "check_passed": true
+            },
+            "final_total_check": {
+                "calculated_value": 6844.0,
+                "extracted_value": 6844.0,
+                "check_passed": true
+            }
+        },
+        "000000": {
+            "subtotal_check": {
+                "calculated_value": 5000,
+                "extracted_value": 5000,
+                "check_passed": true
+            },
+            "discount_check": {
+                "calculated_value": 0,
+                "extracted_value": 0,
+                "check_passed": true
+            },
+            "gst_check": {
+                "calculated_value": 900.0,
+                "extracted_value": 900.0,
+                "check_passed": true
+            },
+            "final_total_check": {
+                "calculated_value": 5900.0,
+                "extracted_value": 5900.0,
+                "check_passed": true
+            }
+        },
+        "2016-10014": {
+            "subtotal_check": {
+                "calculated_value": 192.99,
+                "extracted_value": 192.99,
+                "check_passed": true
+            },
+            "discount_check": {
+                "calculated_value": 0,
+                "extracted_value": 0,
+                "check_passed": true
+            },
+            "gst_check": {
+                "calculated_value": 34.74,
+                "extracted_value": 34.74,
+                "check_passed": true
+            },
+            "final_total_check": {
+                "calculated_value": 227.73000000000002,
+                "extracted_value": 227.73000000000002,
+                "check_passed": true
+            }
+        }
+    },
+    "summary": {
+        "all_fields_confident": false,
+        "all_line_items_verified": false,
+        "totals_verified": true,
+        "issues": [
+            "Low confidence in seal_and_sign_present: 0.8",
+            "Low confidence in invoice_number: 0.8",
+            "Low confidence in supplier_gst_number: 0.5",
+            "Low confidence in bill_to_gst_number: 0.5",
+            "Low confidence in po_number: 0.5",
+            "Low confidence in seal_and_sign_present: 0.5",
+            "Low confidence in po_number: 0.8",
+            "Low confidence in seal_and_sign_present: 0.5",
+            "Line total mismatch in row 3",
+            "Skipping invoice due to error: OCR text is too empty or unclear to parse."
+        ]
+    }
+}
