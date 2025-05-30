@@ -1,0 +1,65 @@
+INVOICE “
+
+: 4 Acme Shop
+
+ID2016-1001 185 Portbello Rd
+
+Issue Date Nov 9, 2016 London W11 ILA
+
+Delivery Date Nov 9, 2016 United Kingdom
+
+Due Date Nov 23, 2016 VAT Number: GB202205019
+
+Client Payment
+
+Café Le Bastille Payment Method Bank Transfer
+
+42 Boulevard Bank Account 8900 0000 0175 7814
+
+Saint-Germain Order Number 12345
+
+75006 Paris .
+
+France Payment Details Lorem ipsum
+Payment Terms Net 15
+
+VAT Number: FR90103402210 PO number 581660
+
+ITEM DESCRIPTION QUANTITY UNIT TAX TOTAL
+
+i; © Best of First Nibs 67% Cacao
+
+it O Pink Sea Salt 71% Cacao
+
+; © Maple and Nibs 75% Cacao
+
+He Saabeasson sane sesvseevecesececssesccvsuccuescseusecuassccnsaavssscesssesessasseus ssseaeecasesueesaccsseeue.teesseresessbarsosssavesscvascsssseedsacuasseusssessssesseesessseasees
+
+4 (©) Coconut Milk 60% Cacao 6 $8.95 20% $53.70
+
+@) Smoked Chat 66% Cacao 4 $7.95 20% $31.80
+
+| TOTAL $192.90 USD
+
+A VAT 20% $38.58 USD
+TOTAL INCL. VAT $23 1%4 8]USD)
+
+Pe
+
+Agnimi, tes et et exces silatibus quicomnit, ul essum
+nobis milland? nis enihill atenim: nctumquatas ne
+
+consondus re nullent ea di officium ut invollaut
+quam solectaturem et quibus ca duciur.
+
+Notes
+
+Lorem Ipsum
+
+Thank you!
+, Agnimi, tes et et exces sitatibus qui comnit.v ul es-
+sum nobis millandt nis enihill atenimi netumquatas. View this invoice online at
+| Hup://www lorem ipsum .cOm/xxxxxxxxxx
+| omatla@company.com +1 (69) 636-48018 Created in Sufio
+i lwitlor g2eme lacobook ascme Inetagram @acme
+
