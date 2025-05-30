@@ -103,3 +103,4 @@ python main.py
 
 ## Demo Video
 [Demo Video For Invoice Handler](https://drive.google.com/drive/folders/11QP1McS6u0orVLN1PsFPv4WMIqK5LtCI?usp=sharing)
+**Kindly ensure the video is viewed in high resolution for optimal clarity.**
