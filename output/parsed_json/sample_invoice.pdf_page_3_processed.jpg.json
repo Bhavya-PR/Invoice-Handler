@@ -1,0 +1,51 @@
+{
+    "invoice_number": "2016-10014",
+    "invoice_date": "09-11-2016",
+    "supplier_gst_number": "GB202208019",
+    "bill_to_gst_number": "FR90103402210",
+    "po_number": "581660",
+    "shipping_address": "185 Portbello Rd, London W11 1LA, United Kingdom",
+    "seal_and_sign_present": false,
+    "items": [
+        {
+            "serial_number": 1,
+            "description": "Bestot First Nibs 67 Cacao",
+            "hsn_sac": "",
+            "quantity": 7,
+            "unit_price": 9.95,
+            "total_amount": 69.65
+        },
+        {
+            "serial_number": 2,
+            "description": "Pink Sea salt 71 Cacao",
+            "hsn_sac": "",
+            "quantity": 3,
+            "unit_price": 7.95,
+            "total_amount": 23.85
+        },
+        {
+            "serial_number": 3,
+            "description": "Maple and Nibs 75 Cacao",
+            "hsn_sac": "",
+            "quantity": 2,
+            "unit_price": 6.95,
+            "total_amount": 13.99
+        },
+        {
+            "serial_number": 4,
+            "description": "coconut Mitk 60 Cacao",
+            "hsn_sac": "",
+            "quantity": 6,
+            "unit_price": 8.95,
+            "total_amount": 53.7
+        },
+        {
+            "serial_number": 5,
+            "description": "Smoked Chat 66 Cacao",
+            "hsn_sac": "",
+            "quantity": 4,
+            "unit_price": 7.95,
+            "total_amount": 31.8
+        }
+    ]
+}

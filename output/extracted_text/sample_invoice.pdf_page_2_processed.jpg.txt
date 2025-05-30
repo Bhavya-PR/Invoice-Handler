@@ -1,34 +1,22 @@
-64 724A AE 34) 0 Yaar Ackiess
-
-iy, Seta, County
-4P CODE
-
+G47 AAG A234) 1 Ver Ackhess
+INWO | CE your@emailfcom Giy, Seta, County
+yournwebsitercom CODE
 Billed To Invoice Number Invoice Total
-Client Name 000000 $ 4 5? 0 @) 0
-1 Client Address 7
-
+Client Name 000000 g
+1 ClientAddress 4 52 0 . 0 0
 City, State, Country Date Of Issue
-
-ZIP CODE 40/07/14
-
+ZIP CODE {0/07/14
 Description Unit Cost Qty / Hr Rate Amount
 Your item Name $1000 1 1000
-
 Item description goes here
-
 Your item Name $1000 1 1000
 Item description goes here
-
-Your itern Name $1000 1 1000
-Item description goes here
-
 Your item Name $1000 1 1000
 Item description goes here
-
-Subtoial $4000.00
+Your item Name $1000 1 1000
+Item description goes here
+Subtotal $4000.00
 Tax $520.00
 Total $4520.00
-
 Invoice Terms
-
-Ex. Please pay your invoice by.... Amount Due (USD) $4520.00
+Ex. Please pay your Invoice by.... Amount Due (USD) $4520.00
