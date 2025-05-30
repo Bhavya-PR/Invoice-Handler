@@ -49,3 +49,19 @@ After installation, set the Tesseract path directly in your code (as you've alre
 import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 ```
+## 2️⃣ Install & Configure Poppler for Windows
+** 📥 Download & Install Poppler **
+Download Poppler from: Poppler for Windows
+
+Extract the Poppler ZIP and move it to:
+```bash
+C:\Program Files\poppler-24.08.0\
+```
+## 🔧 Configure Poppler in Your Project
+Set the Poppler path in preprocess.py:
+```bash
+from pdf2image import convert_from_path
+POPPLER_PATH = r"C:\Program Files\poppler-24.08.0\Library\bin"
+
+pages = convert_from_path(pdf_path, dpi=300, poppler_path=POPPLER_PATH)
+```
