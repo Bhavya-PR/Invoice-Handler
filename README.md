@@ -1,4 +1,4 @@
-# Yavar.AI Hackathon – Invoice Extraction & Verification System
+# Invoice Extraction & Verification System
 
 An AI-Powered Invoice Processing System designed for automated, accurate, and scalable financial document handling. It uses **OCR**, **Computer Vision**, and **LLM-based parsing** to extract, validate, and structure invoice data from scanned PDFs into **JSON** and **Excel reports**, with intelligent verification using **seal/signature detection** and **missing detail inference**.
 
